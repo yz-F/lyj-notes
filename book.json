@@ -1,0 +1,23 @@
+{
+    "title": "lyj's Glory",
+    "author": "lyj",
+    "description": "select * from learn",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "styles": {
+        "website": "./styles/website.css"
+    },
+    "structure": {
+        "readme": "README.md"
+    },
+    "plugins": [
+        "mouseflow",
+        "lightbox"
+    ],
+    "pluginsConfig": {
+        "mouseflow": {
+            "projectId": "12345678abc"
+        }
+        
+    }
+}
