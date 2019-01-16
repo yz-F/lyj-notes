@@ -624,12 +624,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <html><head></head><body><h2 id="javascript-puzzlers">javascript-puzzlers</h2>
+<ul>
+<li><a href="http://javascript-puzzlers.herokuapp.com/" target="_blank">javascript-puzzlers</a><br></li>
+<li><a href="https://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html" target="_blank">javascript-puzzlers&#x7B54;&#x6848;</a><h3 id="reduce">reduce()</h3>
+</li>
+</ul>
 <blockquote>
-<p><a href="http://javascript-puzzlers.herokuapp.com/" target="_blank">javascript-puzzlers</a>
-<a href="https://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html" target="_blank">javascript-puzzlers&#x7B54;&#x6848;</a></p>
-<h3 id="reduce">reduce()</h3>
-<p>array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-&#x8BA1;&#x7B97;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x76F8;&#x52A0;&#x540E;&#x7684;&#x603B;&#x548C;&#xFF1A;125</p>
+<p>array.reduce(function(total, currentValue, currentIndex, arr), initialValue)<br>
+&#x8BA1;&#x7B97;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x76F8;&#x52A0;&#x540E;&#x7684;&#x603B;&#x548C;&#xFF1A;125<br></p>
 </blockquote>
 <pre><code>var numbers = [65, 44, 12, 4];
 
@@ -641,7 +643,7 @@ function myFunction(item) {
 }
 </code></pre><h3 id="mathpow-x-y-">math.pow( x, y )</h3>
 <blockquote>
-<p>pow() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE; xy&#xFF08;x&#x7684;y&#x6B21;&#x65B9;&#xFF09; &#x7684;&#x503C;&#x3002;
+<p>pow() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE; xy&#xFF08;x&#x7684;y&#x6B21;&#x65B9;&#xFF09; &#x7684;&#x503C;&#x3002;<br>
 &#x8BA1;&#x7B97;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x76F8;&#x52A0;&#x540E;&#x7684;&#x603B;&#x548C;&#xFF1A;125</p>
 </blockquote>
 <pre><code>var numbers = [65, 44, 12, 4];
@@ -657,13 +659,13 @@ function myFunction(item) {
 <p>&#x91C7;&#x7528; IEEE 754[1] &#x7684;&#x5B9E;&#x73B0;&#x7684;&#x7CFB;&#x7EDF;&#x5E94;&#x8BE5;&#x90FD;&#x4F1A;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;
 &#x89E3;&#x51B3;&#x601D;&#x8DEF;&#xFF1A;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#x8BA1;&#x7B97;&#xFF0C;&#x5373;&#x5148;&#x4E58;&#x4E00;&#x4E2A;&#x5927;&#x7684;&#x6570;&#x518D;&#x9664;&#x53BB;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x8BA1;&#x7B97;&#x8BEF;&#x5DEE;&#x662F;&#x7531;&#x6D6E;&#x70B9;&#x8FD0;&#x7B97;&#x5F15;&#x8D77;&#x7684;</p>
 <h3 id="new-stringx--x">new String(x) !== x</h3>
-<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;typeof str == &quot;string&quot; || typeof str.substring == &quot;function&quot;
-Javascript&#x521B;&#x5EFA;&#x8005;&#x4E3A;string&#x6216;int&#x7B49;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x4E86;&#x5305;&#x88C5;&#x5668;&#xFF0C;&#x4F7F;&#x5176;&#x4E0E;java&#x7C7B;&#x4F3C;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;someome&#x4F7F;&#x7528;&#x65B0;&#x7684;String&#xFF08;&#x201C;x&#x201D;&#xFF09;&#xFF0C;&#x5219;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#x5C06;&#x662F;&#x201C;object&#x201D;&#x800C;&#x4E0D;&#x662F;&#x201C;string&#x201D;&#x3002;
-String(x) does not create an object but does return a string, i.e. typeof String(1) === &quot;string&quot;
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;typeof str == &quot;string&quot; || typeof str.substring == &quot;function&quot;<br>
+Javascript&#x521B;&#x5EFA;&#x8005;&#x4E3A;string&#x6216;int&#x7B49;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x4E86;&#x5305;&#x88C5;&#x5668;&#xFF0C;&#x4F7F;&#x5176;&#x4E0E;java&#x7C7B;&#x4F3C;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;someome&#x4F7F;&#x7528;&#x65B0;&#x7684;String&#xFF08;&#x201C;x&#x201D;&#xFF09;&#xFF0C;&#x5219;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#x5C06;&#x662F;&#x201C;object&#x201D;&#x800C;&#x4E0D;&#x662F;&#x201C;string&#x201D;&#x3002;<br>
+String(x) does not create an object but does return a string, i.e. typeof String(1) === &quot;string&quot;<br>
 <a href="https://stackoverflow.com/questions/5750656/whats-the-point-of-new-stringx-in-javascript" target="_blank">JavaScript&#x4E2D; new String&#xFF08;&#x201C;x&#x201D;&#xFF09;&#x7684;&#x610F;&#x4E49;&#x4F55;&#x5728;&#xFF1F;</a></p>
 <h3 id="javascript-infinity-&#x5C5E;&#x6027;">JavaScript Infinity &#x5C5E;&#x6027;</h3>
-<p>Infinity &#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x8868;&#x793A;&#x6B63;&#x65E0;&#x7A77;&#x5927;&#x7684;&#x6570;&#x503C;&#x3002;
-&#x65E0;&#x6CD5;&#x4F7F;&#x7528; for/in &#x5FAA;&#x73AF;&#x6765;&#x679A;&#x4E3E; Infinity &#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x7528; delete &#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x5220;&#x9664;&#x5B83;&#x3002;Infinity &#x4E0D;&#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x4ED6;&#x503C;&#x3002;
+<p>Infinity &#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x8868;&#x793A;&#x6B63;&#x65E0;&#x7A77;&#x5927;&#x7684;&#x6570;&#x503C;&#x3002;<br>
+&#x65E0;&#x6CD5;&#x4F7F;&#x7528; for/in &#x5FAA;&#x73AF;&#x6765;&#x679A;&#x4E3E; Infinity &#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x7528; delete &#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x5220;&#x9664;&#x5B83;&#x3002;Infinity &#x4E0D;&#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x4ED6;&#x503C;&#x3002;<br>
 Infinity % 2 gives NaN</p>
 </blockquote>
 <h3 id="javascript-infinity-&#x5C5E;&#x6027;">JavaScript Infinity &#x5C5E;&#x6027;</h3>
@@ -757,7 +759,7 @@ radix&#x53EF;&#x9009;&#x3002;&#x8868;&#x793A;&#x8981;&#x89E3;&#x6790;&#x7684;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"javascript-puzzlers","level":"1.2.6.1.1","depth":4,"previous":{"title":"practice","level":"1.2.6.1","depth":3,"ref":"","articles":[{"title":"javascript-puzzlers","level":"1.2.6.1.1","depth":4,"path":"tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md","ref":"tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mouseflow","lightbox","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"mouseflow":{"projectId":"12345678abc"},"highlight":{},"lightbox":{"jquery":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lyj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"lyj's Glory","language":"zh-hans","gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md","mtime":"2019-01-16T09:52:41.604Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-16T09:56:31.443Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"javascript-puzzlers","level":"1.2.6.1.1","depth":4,"previous":{"title":"practice","level":"1.2.6.1","depth":3,"ref":"","articles":[{"title":"javascript-puzzlers","level":"1.2.6.1.1","depth":4,"path":"tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md","ref":"tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mouseflow","lightbox"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"mouseflow":{"projectId":"12345678abc"},"lightbox":{"jquery":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lyj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"lyj's Glory","language":"zh-hans","gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md","mtime":"2019-01-16T09:59:05.971Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-16T10:00:54.065Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -773,10 +775,6 @@ radix&#x53EF;&#x9009;&#x3002;&#x8868;&#x793A;&#x8981;&#x89E3;&#x6790;&#x7684;&#x
     
         
         <script src="../../../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

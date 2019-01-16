@@ -1,9 +1,10 @@
 ## javascript-puzzlers
-> [javascript-puzzlers](http://javascript-puzzlers.herokuapp.com/)
-> [javascript-puzzlers答案](https://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html)
+- [javascript-puzzlers](http://javascript-puzzlers.herokuapp.com/)<br>
+- [javascript-puzzlers答案](https://flyfy1.github.io/language/2014/02/23/js-tricks-from-js-puzzlers.html)
 ### reduce() 
-> array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-> 计算数组元素相加后的总和：125
+
+> array.reduce(function(total, currentValue, currentIndex, arr), initialValue)<br>
+> 计算数组元素相加后的总和：125<br>
 
     var numbers = [65, 44, 12, 4];
     
@@ -15,7 +16,7 @@
     }
 
 ### math.pow( x, y )  
-> pow() 方法返回 xy（x的y次方） 的值。
+> pow() 方法返回 xy（x的y次方） 的值。<br>
 > 计算数组元素相加后的总和：125
 
     var numbers = [65, 44, 12, 4];
@@ -31,13 +32,13 @@
 > 采用 IEEE 754[1] 的实现的系统应该都会存在这个问题。
 > 解决思路：转换成整数计算，即先乘一个大的数再除去一个数，因为计算误差是由浮点运算引起的
 ### new String(x) !== x 
-> 解决方法：typeof str == "string" || typeof str.substring == "function"
-> Javascript创建者为string或int等基本类型创建了包装器，使其与java类似。不幸的是，如果someome使用新的String（“x”），则元素的类型将是“object”而不是“string”。
->String(x) does not create an object but does return a string, i.e. typeof String(1) === "string"
+> 解决方法：typeof str == "string" || typeof str.substring == "function"<br>
+> Javascript创建者为string或int等基本类型创建了包装器，使其与java类似。不幸的是，如果someome使用新的String（“x”），则元素的类型将是“object”而不是“string”。<br>
+>String(x) does not create an object but does return a string, i.e. typeof String(1) === "string"<br>
 >[JavaScript中 new String（“x”）的意义何在？](https://stackoverflow.com/questions/5750656/whats-the-point-of-new-stringx-in-javascript)
 ### JavaScript Infinity 属性
-> Infinity 属性用于存放表示正无穷大的数值。
-> 无法使用 for/in 循环来枚举 Infinity 属性，也不能用 delete 运算符来删除它。Infinity 不是常量，可以把它设置为其他值。
+> Infinity 属性用于存放表示正无穷大的数值。<br>
+> 无法使用 for/in 循环来枚举 Infinity 属性，也不能用 delete 运算符来删除它。Infinity 不是常量，可以把它设置为其他值。<br>
 >Infinity % 2 gives NaN
 
 ### JavaScript Infinity 属性
