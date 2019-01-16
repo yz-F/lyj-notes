@@ -12,8 +12,8 @@
         * [mkdir、status、reflog、stage](tools/git/install.md)
         * [add、commit、checkout(撤销修改)、rm、remote](tools/git/build.md)
         * [命令集合](tools/git/command.md)
-    * [vue](tools/vue/vue.md)
-        * [content1](tools/vue/content1.md)
+    * [vue]()
+        * [content1]()
             * [basis](tools/vue/content1/basis.md)
             * [complex-component](tools/vue/content1/complex-component.md)
             * [ifAndShow](tools/vue/content1/ifAndShow.md)
@@ -23,10 +23,18 @@
             * [v-on](tools/vue/content1/v-on.md)
             * [vuefragment](tools/vue/content1/vuefragment.md)
             * [webpack](tools/vue/content1/webpack.md)
-        * [content2](tools/vue/content2.md)
+        * [content2]()
             * [component](tools/vue/content2/component.md)
             * [keep-alive](tools/vue/content2/keep-alive.md)
             * [life-time](tools/vue/content2/life-time.md)
+    * [travel](tools/travel/ChangSha.md)     
+    * [interview]()    
+        * [跨域相关](tools/interview/cross-domain/cross-domain.md)  
+        * [整理](tools/interview/cross-domain/my-cross-domain.md)
+    * [jspractice]()    
+        * [practice]()  
+            * [javascript-puzzlers](tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md) 
+          
     
 
 
