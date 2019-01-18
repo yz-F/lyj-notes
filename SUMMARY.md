@@ -38,7 +38,11 @@
         * [travisCi]()  
             * [travisCi](tools/Wh-coder/travisCi/travisCi.md)
         * [Git]()  
-            * [reset](tools/Wh-coder/Git/reset.md)              
+            * [reset](tools/Wh-coder/Git/reset.md)
+        * [package.json]()  
+            * [package.json](tools/Wh-coder/package.json/package.json.md)
+        * [npm]()  
+            * [npm](tools/Wh-coder/npm/npm.md)                        
           
     
 

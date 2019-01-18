@@ -1,6 +1,6 @@
 # lyj's blog
-haha
-本项目的地址为:<br><br>[https://vivianluolita.github.io/lyj-notes/](https://vivianluolita.github.io/lyj-notes/)
+
+本项目的地址为:<br><br>[https://github.com/Vivianluolita?tab=repositories](https://github.com/Vivianluolita?tab=repositories)
 
 ## 概述
 

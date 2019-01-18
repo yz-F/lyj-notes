@@ -10,5 +10,5 @@
 ![travis](../../../image/reset/gitchange3.png)
 
 ###git reset b5c3971 --hard
-![travis](../../../image/reset/travisCi4.png)
+![travis](../../../image/reset/gitchange4.png)
 >右侧此时就没有修改前的文件了。回退到没有变化的时候的版本。
