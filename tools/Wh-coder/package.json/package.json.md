@@ -8,29 +8,19 @@
 >一个简单的package.json  
 
     {
-    "name": "xiaofeng-weather",
-    "version": "1.0.2",
-    "description": "A simple tool to get weather info in the command line",
-    "main": "index.js",
-    "bin": {
-        "weather": "./index.js"
-    },
-    "dependencies": {
-        "axios": "^0.17.0"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "start": "echo start...",
-        "build": "echo build...",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "weather",
-        "xiaofeng"
-    ],
-    "author": "xiaofeng",
-    "license": "ISC"
-    }
+  "name": "webpack_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.5.2"
+  }
+}
 ## npm install
 
     使用 npm install 命令就可以根据这个配置文件，自动下载所需的模块，默认是dependencies 和 devDependencies 中的模块都会下载。
