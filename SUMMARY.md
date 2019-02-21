@@ -35,7 +35,7 @@
     * [jspractice]()    
         * [practice]()  
             * [javascript-puzzlers](tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md) 
-            * [javascript-puzzlers](tools/jspractice/practice/test-driven-js-assment/test-driven-js-assment.md) 
+            * [javascript-puzzlers](tools/jspractice/practice/test-driven-js-assment/test-driven-js-assignment.md) 
     * [Wh-coder]()    
         * [travisCi]()  
             * [travisCi](tools/Wh-coder/travisCi/travisCi.md)
