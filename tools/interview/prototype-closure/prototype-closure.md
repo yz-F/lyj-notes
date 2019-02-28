@@ -1,13 +1,13 @@
-##理解javascript原型和作用域系列（1）——一切都是对象
+## 理解javascript原型和作用域系列（1）——一切都是对象
 
 1. 值类型不是对象，
 2. typeof 检测值类型 undefined, number, string, boolean；剩下的都是引用类型，包括函数、数组、对象、null；其中 function 可以被 typeof 识别；最后还有一种可以识别的是 es6 symbol
 3. 函数也是一种对象。他也是属性的集合，你也可以对函数进行自定义属性
 
-##深入理解javascript原型和闭包（2）——函数和对象的关系
+## 深入理解javascript原型和闭包（2）——函数和对象的关系
 1. 对象是函数创建的，而函数却又是一种对象
 
-
+    ```
     var fn = function () { };
     console.log(fn instanceof Object);  // true
     //对象可以通过函数来创建
@@ -16,13 +16,14 @@
                 this.year = 1988;
             }
             var fn1 = new Fn();
+    ```           
 
-#深入理解javascript原型和闭包（3）——prototype原型
+## 深入理解javascript原型和闭包（3）——prototype原型
 
 1. 函数也是一种对象。他也是属性的集合，你也可以对函数进行自定义属性
 
 
-    var obj = {
+```var obj = {
         a:10,
         b:function(x){
             alert(this.a+x);
@@ -46,7 +47,7 @@
                 name: "王福朋",
                 year: 1988
             };
-
+```
 
 2. js就默认的给函数一个属性——prototype。对，每个函数都有一个属性叫做prototype。
 > 每个函数都有一个属性叫做prototype。这个prototype的属性值是一个对象（属性的集合，再次强调！），默认的只有一个叫做constructor的属性，指向这个函数本身。
@@ -54,44 +55,42 @@
 ![prototype1](../../../image/closure/prototype1.png)
  如上图，SuperType是是一个函数，右侧的方框就是它的原型。
 
-3.  原型既然作为对象，属性的集合，不可能就只弄个constructor来玩玩，肯定可以自定义的增加许多属性。例如这位Object大哥，人家的prototype里面，就有好几个其他属性。
+3. 原型既然作为对象，属性的集合，不可能就只弄个constructor来玩玩，肯定可以自定义的增加许多属性。例如这位Object大哥，人家的prototype里面，就有好几个其他属性。
 
 ![prototype1](../../../image/closure/prototype2.png)
 
 >你也可以在自己自定义的方法的prototype中新增自己的属性
 
-
+```
     function Fn() { }
             Fn.prototype.name = '王福朋';
             Fn.prototype.getYear = function () {
                 return 1988;
             };
-
+```
 
 ![prototype1](../../../image/closure/prototype3.png)       
 
 4. 但是，这样做有何用呢？ —— 解决这个问题，咱们还是先说说jQuery吧。
 
-
+```
         var $div = $('div');
         $div.attr('myName', '王福朋');
-
+```
 
 - 以上代码中，$('div')返回的是一个对象，对象——被函数创建的。假设创建这一对象的函数是 myjQuery。它其实是这样实现的。<br>
-
+```
 
          myjQuery.prototype.attr = function () {
          //……
-    };
-    $('div') = new myjQuery();
+        };
+        $('div') = new myjQuery();
 
-
-
-
+```
 
 > 即，Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。
 
-
+```
 
          function Fn() { }
         Fn.prototype.name = '王福朋';
@@ -102,15 +101,21 @@
         var fn = new Fn();
         console.log(fn.name);
         console.log(fn.getYear());
-
+```
 >因为每个对象都有一个隐藏的属性——“__proto__”，这个 属 性引用了创建这个对象的函数的prototype。即：   fn.__proto__ === Fn.prototype
  这里的"__proto__"成为“隐式原型”        
 
 ### 深入理解javascript原型和闭包（4）——隐式原型
+
 >obj.__proto__和Object.prototype
+
  每个函数function都有一个prototype，即原型。这里再加一句话——每个对象都有一个__proto__，可成为隐式原型。
- var obj = {}'
- console.log(obj.__proto__);
+
+ ``` 
+     var obj = {}'
+     console.log(obj.__proto__);
+```
+
 ![prototype1](../../../image/closure/prototype4.png) 
  **obj.__proto__和Object.prototype的属性一样**
 
@@ -120,7 +125,9 @@
 
 
 >那么上图中的“Object prototype”也是一个对象，它的__proto__指向哪里？
+
  在说明“Object prototype”之前，先说一下自定义函数的prototype。自定义函数的prototype本质上就是和 var obj = {} 是一样的，都是被Object创建，所以它的__proto__指向的就是Object.prototype。
+
  **但是Object.prototype确实一个特例——它的__proto__指向的是null，切记切记！**
 ![prototype1](../../../image/closure/prototype6.png)
 
@@ -130,13 +137,14 @@
  函数也不是从石头缝里蹦出来的，函数也是被创建出来的。谁创建了函数呢？——Function——注意这个大写的“F”。
 
  且看如下代码。
-
+```
  function fn(x,y){
      return x+y;
  }
  console.log(fn(10,20));
  var fn1 = new Function("x","y","return x + y;");
  console.log(fn1(5,6));
+ ```
  首先根本不推荐用第二种方式。
 
 >根据上面说的一句话——对象的__proto__指向的是创建它的函数的prototype，就会出现：Object.__proto__ === Function.prototype。用一个图来表示。
@@ -151,6 +159,8 @@
  其实稍微想一下就明白了。Function也是一个函数，函数是一种对象，也有__proto__属性。既然是函数，那么它一定是被Function创建。所以——Function是被自身创建的。所以它的__proto__指向了自身的Prototype。
 
  >Function.prototype指向的对象，它的__proto__是不是也指向Object.prototype？
+
+ 
  答案是肯定的。因为Function.prototype指向的对象也是一个普通的被Object创建的对象，所以也遵循基本的规则。
 ![prototype](../../../image/closure/prototype8.png)
 
@@ -158,13 +168,14 @@
 
 >对于值类型，你可以通过typeof判断，string/number/boolean都很清楚，但是typeof在判断到引用类型的时候，返回值只有object/function，你不知道它到底是一个object对象，还是数组，还是new Number等等。
 
- 这个时候就需要用到instanceof。例如：
+ 这个时候就需要用到 `instanceof`。例如：
+ ```
  function Foo(){}
  var f1 = new Foo();
 
  console.log(f1 instanceof Foo);//true
  console.log(f1 instanceof Object);//true
-
+```
  上图中，f1这个对象是被Foo创建，但是“f1 instanceof Object”为什么是true呢？
 
  至于为什么过会儿再说，先把instanceof判断的规则告诉大家。根据以上代码看下图：
@@ -178,11 +189,11 @@
  按照以上规则，大家看看“ f1 instanceof Object ”这句代码是不是true？ 根据上图很容易就能看出来，就是true。
 
  因此：
-
+```
  console.log(Object instanceof Function) //true
  console.log(Fuction instanceof Object) //true
  console.log(Function instanceof Function) //true
-
+```
 ![prototype](../../../image/closure/prototype10.png)
 
 
@@ -194,6 +205,7 @@
  ### 深入理解javascript原型和闭包（6）——继承
 
 >javascript中的继承是通过原型链来体现的。先看几句代码
+```
  fuction Foo(){}
  var f1 = new Foo();
  f1.a = 10;
@@ -201,7 +213,7 @@
  Foo.prototype.b = 200;
  console.log(f1.a); //10
  console.log(f1.b); //200
-
+```
  以上代码中，f1是Foo函数new出来的对象，f1.a是f1对象的基本属性，f1.b是怎么来的呢？——从Foo.prototype得来，因为f1.__proto__指向的是Foo.prototype
 
  **访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着__proto__这条链向上找，这就是原型链。**
@@ -249,7 +261,7 @@
 ![prototype](../../../image/closure/prototype15.png)
 
 > 其次，如果继承的方法不合适，可以做出修改。
- 同理，我也可以自定义一个函数，并自己去修改prototype.toString()方法。
+ 同理，我也可以自定义一个函数，并自己去修改`prototype.toString()`方法。
 ![prototype](../../../image/closure/prototype16.png) 
 >最后，如果感觉当前缺少你要用的方法，可以自己去创建
 ![prototype](../../../image/closure/prototype17.png) 
@@ -292,7 +304,7 @@
 
 -   其次，eval代码接收的也是一段文本形式的代码。
 
- eval("alert(123)");
+ `eval("alert(123)");`
 
 - 最后，函数体是代码段是因为函数在创建时，本质上是 new Function(…) 得来的，其中需要传入一个文本形式的参数作为函数体。
 ![prototype](../../../image/closure/prototype21.png) 
@@ -354,14 +366,16 @@
  console.log(this ===window); //true
 
  普通函数在调用时，其中的this也都是window。
-
+```
  var x = 10;
  var fn = function(){
      console.log(this); //window 
      console.log(this.x);//10
  }
  fn();
+ ```
 不过下面的情况你需要注意一下：
+```
 var obj = {
     x:10,
     fn:function(){
@@ -373,6 +387,7 @@ var obj = {
     }
 }
 obj.fn();
+```
 函数f虽然是在obj.fn内部定义的，但是它仍然是一个普通的函数，this仍然指向window。
 
 >最后jQuery源码
@@ -406,9 +421,12 @@ obj.fn();
 
 ### 深入理解javascript原型和闭包（12）——简介【作用域】
 >提到作用域，有一句话大家（有js开发经验者）可能比较熟悉：“javascript没有块级作用域”。所谓“块”，就是大括号“｛｝”中间的语句。例如if语句：
+
 ![prototype](../../../image/closure/prototype36.png)
 >其实，你光知道“javascript没有块级作用域”是完全不够的，你需要知道的是——javascript除了全局作用域之外，只有函数可以创建的作用域。
+
 **所以，我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式。**
+
 - jQuery就是一个很好的示例
 ![prototype](../../../image/closure/prototype37.png)
 >下面继续说作用域。作用域是一个很抽象的概念，类似于一个“地盘”
