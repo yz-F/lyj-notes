@@ -1,3 +1,4 @@
+### 原文参照 [深入理解javascript原型和闭包系列](https://www.cnblogs.com/wangfupeng1988/tag/%E4%BD%9C%E7%94%A8%E5%9F%9F/)
 ## 理解javascript原型和作用域系列（1）——一切都是对象
 
 1. 值类型不是对象，
