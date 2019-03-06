@@ -32,6 +32,7 @@
         * [跨域相关](tools/interview/cross-domain/cross-domain.md)
         * [深入理解javascript原型和闭包](tools/interview/prototype-closure/prototype-closure.md)
         * [summary](tools/interview/how-to-introduce/introduce.md)
+        * [性能优化](tools/interview/performance-optimization/performance-optimization.md)
     * [jspractice]()    
         * [practice]()  
             * [javascript-puzzlers](tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md) 
