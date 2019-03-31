@@ -33,6 +33,7 @@
         * [深入理解javascript原型和闭包](tools/interview/prototype-closure/prototype-closure.md)
         * [summary](tools/interview/how-to-introduce/introduce.md)
         * [性能优化](tools/interview/performance-optimization/performance-optimization.md)
+        * [url解析](tools/interview/url-parse/url-parse.md)
     * [jspractice]()    
         * [practice]()  
             * [javascript-puzzlers](tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md) 
