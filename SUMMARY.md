@@ -35,7 +35,7 @@
         * [性能优化](tools/interview/performance-optimization/performance-optimization.md)
         * [url解析](tools/interview/url-parse/url-parse.md)
         * [跨域问题](tools/interview/same-origin-policy/same-origin-policy.md)
-        * [VUE 返回上一页相关](tools/interview/same-origin-policy/same-origin-policy.md)
+        * [VUE 返回上一页相关](tools/interview/vue-router-refresh/vue-router-refresh.md)
         * [VUE的数据双向绑定](tools/interview/two-way-data-binding/two-way-data-binding.md)
         * [VUE-cli反向代理](tools/interview/Reverse-Proxy/Reverse-Proxy.md)
     * [jspractice]()    
