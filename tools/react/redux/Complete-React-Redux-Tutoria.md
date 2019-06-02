@@ -1,4 +1,4 @@
-## [2019 React Redux 完全指南](https://juejin.im/post/5cac8ccd6fb9a068530111c7#heading-29) 
+## 学习[2019 React Redux 完全指南](https://juejin.im/post/5cac8ccd6fb9a068530111c7#heading-29) 笔记
 
 ### Redux 的好处
 

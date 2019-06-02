@@ -27,8 +27,9 @@
             * [component](tools/vue/content2/component.md)
             * [keep-alive](tools/vue/content2/keep-alive.md)
             * [life-time](tools/vue/content2/life-time.md)
-    * [travel](tools/travel/ChangSha.md)
-    * [travel](tools/travel/xian.md)     
+    * [travel]()
+        * [changsha](tools/travel/ChangSha.md)
+        * [xian](tools/travel/xian.md)     
     * [interview]()    
         * [跨域相关](tools/interview/cross-domain/cross-domain.md)
         * [深入理解javascript原型和闭包](tools/interview/prototype-closure/prototype-closure.md)
@@ -43,7 +44,7 @@
         * [practice]()  
             * [javascript-puzzlers](tools/jspractice/practice/javascript-puzzlers/javascript-puzzlers.md) 
             * [test-driven-js-assignment](tools/jspractice/practice/test-driven-js-assment/test-driven-js-assignment.md) 
-    * [Wh-coder]()    
+    * [自动化]()    
         * [travisCi]()  
             * [travisCi](tools/Wh-coder/travisCi/travisCi.md)
         * [Git]()  
@@ -51,7 +52,15 @@
         * [package.json]()  
             * [package.json](tools/Wh-coder/package.json/package.json.md)
         * [npm]()  
-            * [npm](tools/Wh-coder/npm/npm.md)                        
+            * [npm](tools/Wh-coder/npm/npm.md)   
+    * [react]()    
+        * [react-content]()  
+            * [react-todomvc](tools/react/react-content/)
+        * [redux]()  
+            * [Complete-React-Redux-Tutoria](tools/react/redux/Complete-React-Redux-Tutoria.md)
+    * [work]()    
+        * [lyj-work-summary](tools/work/work-summary.md)  
+     
           
     
 
