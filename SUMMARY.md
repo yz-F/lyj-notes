@@ -27,9 +27,9 @@
             * [component](tools/vue/content2/component.md)
             * [keep-alive](tools/vue/content2/keep-alive.md)
             * [life-time](tools/vue/content2/life-time.md)
-    * [travel]()
+    <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
-        * [xian](tools/travel/xian.md)     
+        * [xian](tools/travel/xian.md)      -->
     * [interview]()    
         * [跨域相关](tools/interview/cross-domain/cross-domain.md)
         * [深入理解javascript原型和闭包](tools/interview/prototype-closure/prototype-closure.md)
@@ -58,8 +58,8 @@
             * [react-todomvc](tools/react/react-content/)
         * [redux]()  
             * [Complete-React-Redux-Tutoria](tools/react/redux/Complete-React-Redux-Tutoria.md)
-    * [work]()    
-        * [lyj-work-summary](tools/work/work-summary.md)  
+    <!-- * [work]()    
+        * [lyj-work-summary](tools/work/work-summary.md)   -->
      
           
     
