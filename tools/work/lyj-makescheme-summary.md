@@ -8,130 +8,130 @@
 
 1. $.ecity 封装
 
-```
+    ```
 
-var MakeScheme = $.ecity.Class({
+    var MakeScheme = $.ecity.Class({
 
-    //此处定义类的私有属性
+        //此处定义类的私有属性
 
-    pointLayer;
-    polylineLayer;
-    polygonLayer;
-    mapWnd;
-    paramA;
-    paramB;
+        pointLayer;
+        polylineLayer;
+        polygonLayer;
+        mapWnd;
+        paramA;
+        paramB;
 
-    //完成初始化基本参数的赋值
+        //完成初始化基本参数的赋值
 
-    initialize: function(options) {
-        $.ecity.extend(this, options);
-        //DOM初始化
-        this.createHtml();
-        //DOM方法初始化
-        this.bindEvent();
-        //图层初始化
-        this.initlayer();
-        //完成基本参数的赋值
-        this.mapWnd = options.mapWnd;
-        this.patrolSvr = options.patrolSvr;
-        //此处定义封装的变量的值，值可以是从外面传进来，避免全局变量滥用
-        this.tableServer = options.tableServer;
-        //手动画必经点
-        this.pointNum = 0;
-        //表格必经点
-        this.tablePointNum = 0;
-        //表格管长
-        this.tablePipeLength = 0;
-        //必经点总数
-        this._count = 0;
-        //选择类型
+        initialize: function(options) {
+            $.ecity.extend(this, options);
+            //DOM初始化
+            this.createHtml();
+            //DOM方法初始化
+            this.bindEvent();
+            //图层初始化
+            this.initlayer();
+            //完成基本参数的赋值
+            this.mapWnd = options.mapWnd;
+            this.patrolSvr = options.patrolSvr;
+            //此处定义封装的变量的值，值可以是从外面传进来，避免全局变量滥用
+            this.tableServer = options.tableServer;
+            //手动画必经点
+            this.pointNum = 0;
+            //表格必经点
+            this.tablePointNum = 0;
+            //表格管长
+            this.tablePipeLength = 0;
+            //必经点总数
+            this._count = 0;
+            //选择类型
 
-        //其他参数省略
-        ....
-    },
-    //类的私有方法
-    createHtml:function(){......},
-    //方法中调用方法
-    selectOnChange:function(){
-        var that = this;
-        that.startQuery();
-    },
-    startQuery:function(){},
-    //将dom事件从dom上解绑
-    bindEvent:function(){
-        var that = this;
-        that.$targetContainer.find('#equipType').on('change', function() {
-        that.tabindex = $('#equipType option:selected').attr('dataIndex');
-        that.selectOnChange(equipCfg);
-        });
-    },
-    initlayer: function() {...},
-    clearLayer: function() {...},
-    destroyLayer: function() {...},
-    //计算必经点总和
-    getPointsSum: function() {...},
-    //计算必经线总和
-    addPolyline: function() {...},
-    //用于手动增加必经点数目
-    addPoint: function() {...},
-    //用于手动增加必经线数目
-    addPolyline: function() {...},
-    //用于手动增加必经面数目
-    addPolygon: function() {...},
-    //画点
-    drawPoint: function() {...},
-    //画线
-    drawLine: function() {...},
-    //画面
-    drawPolygon: function() {...},
-    //获取线的长度
-    getLength: function() {...},
-    //删除指定的graphic
-    onDeleGra: function() {...},
-    //移除点
-    removePoint: function() {...},
-    //移除线
-    redrawPolylines: function() {...},
-    //移除面
-    redrawPolygons: function() {...},
-    ...
-    //其他业务功能
-    })    
-```
+            //其他参数省略
+            ....
+        },
+        //类的私有方法
+        createHtml:function(){......},
+        //方法中调用方法
+        selectOnChange:function(){
+            var that = this;
+            that.startQuery();
+        },
+        startQuery:function(){},
+        //将dom事件从dom上解绑
+        bindEvent:function(){
+            var that = this;
+            that.$targetContainer.find('#equipType').on('change', function() {
+            that.tabindex = $('#equipType option:selected').attr('dataIndex');
+            that.selectOnChange(equipCfg);
+            });
+        },
+        initlayer: function() {...},
+        clearLayer: function() {...},
+        destroyLayer: function() {...},
+        //计算必经点总和
+        getPointsSum: function() {...},
+        //计算必经线总和
+        addPolyline: function() {...},
+        //用于手动增加必经点数目
+        addPoint: function() {...},
+        //用于手动增加必经线数目
+        addPolyline: function() {...},
+        //用于手动增加必经面数目
+        addPolygon: function() {...},
+        //画点
+        drawPoint: function() {...},
+        //画线
+        drawLine: function() {...},
+        //画面
+        drawPolygon: function() {...},
+        //获取线的长度
+        getLength: function() {...},
+        //删除指定的graphic
+        onDeleGra: function() {...},
+        //移除点
+        removePoint: function() {...},
+        //移除线
+        redrawPolylines: function() {...},
+        //移除面
+        redrawPolygons: function() {...},
+        ...
+        //其他业务功能
+        })    
+    ```
 
 2. 封装的传参
 
-```
-    makeScheme = new MakeScheme({
+    ```
+        makeScheme = new MakeScheme({
 
-        //参数都存放在option里。
+            //参数都存放在option里。
 
-        $targetContainer: $makeScheme,
-        eContext: eContext,
-        type: type,
-        cfg: schemeCfg,
-        queryPanelFields: queryPanelFields,
-        metaIns: metaIns,
-        tableSvrUrl: tableSvrUrl,
-        mapWnd: mapWnd,
-        patrolSvr: patrolSvr,
-        tableServer: tableServer,
+            $targetContainer: $makeScheme,
+            eContext: eContext,
+            type: type,
+            cfg: schemeCfg,
+            queryPanelFields: queryPanelFields,
+            metaIns: metaIns,
+            tableSvrUrl: tableSvrUrl,
+            mapWnd: mapWnd,
+            patrolSvr: patrolSvr,
+            tableServer: tableServer,
 
-        //handleTypechange是onTypeChange的回调函数。用于处理外部的接口
-        
+            //handleTypechange是onTypeChange的回调函数。用于处理外部的接口
+            
 
-        onTypeChange: function(res, itemType) {
-            orderby = null;
-            if (res) {
-            handleTypeChange(res, itemType);
-            }
-        },
-    });
+            onTypeChange: function(res, itemType) {
+                orderby = null;
+                if (res) {
+                handleTypeChange(res, itemType);
+                }
+            },
+        });
 
-```
+    ```
 
 3. 封装方法的联动
-    - 实现 makeScheme 中方案改变，eyQueryPanel 进行联动
+    ***实现 makeScheme 中方案改变，eyQueryPanel 进行联动***
     ```
         index.html
 
@@ -190,21 +190,21 @@ var MakeScheme = $.ecity.Class({
 
 
 4. 封装将DOM与DOM操作分离
-```
-    //将dom事件从dom上解绑
-    bindEvent:function(){
-        var that = this;
-        that.$targetContainer.find('#equipType').on('change', function() {
-        that.tabindex = $('#equipType option:selected').attr('dataIndex');
-        that.selectOnChange(equipCfg);
-        });
-    },
+    ```
+        //将dom事件从dom上解绑
+        bindEvent:function(){
+            var that = this;
+            that.$targetContainer.find('#equipType').on('change', function() {
+            that.tabindex = $('#equipType option:selected').attr('dataIndex');
+            that.selectOnChange(equipCfg);
+            });
+        },
 
-```
+    ```
 
 5. 闭包也可以进行模块封装（避免全局污染）
 
-    - 参考资料：javascript高级程序设计（第4章<变量作用域和内存问题>，第6章<面向对象的程序设计>，第7章<函数表达式>）
+    *** 参考资料：javascript高级程序设计（第4章<变量作用域和内存问题>，第6章<面向对象的程序设计>，第7章<函数表达式>）***
     
     ```
 
@@ -240,105 +240,108 @@ var MakeScheme = $.ecity.Class({
     ```
 
 #### 地图
-```
-地图操作：
-1.头部需要手动添加必经点，必经线。quertTable也可以进行点线面的勾选，并显示在地图上。并且手动画的点线面和queryTable显示的点线面并不影响。
-2.多个面板的点线面不互相影响。
-3.并且因方案类别不同，图层需要重置。
 
-1. 为了要保证功能内的点线面独立性，需要使用三个图层（layerId）
-2. 为了保证面板多次装载，互相不受影响，layerId 之间需要唯一
-3. 内部统一使用 pointLayerId，polylineLayerId，polygonLayerId 进行图层相关操作
-```
-1. 地图概念
+    ```
+    地图操作：
+    1.头部需要手动添加必经点，必经线。quertTable也可以进行点线面的勾选，并显示在地图上。并且手动画的点线面和queryTable显示的点线面并不影响。
+    2.多个面板的点线面不互相影响。
+    3.并且因方案类别不同，图层需要重置。
+
+    1. 为了要保证功能内的点线面独立性，需要使用三个图层（layerId）
+    2. 为了保证面板多次装载，互相不受影响，layerId 之间需要唯一
+    3. 内部统一使用 pointLayerId，polylineLayerId，polygonLayerId 进行图层相关操作
+    ```
+<!-- 1. 地图概念
+
+    点画在grafic上,点图层添加grafic,map添加点图层。
+    线画在grafic上,线图层添加grafic,map添加线图层。
+    面画在grafic上,面图层添加grafic,map添加面图层。 -->
+
+1. 地图初始化和销毁
+
+    ***初始化一个面板上的所有图层，包括手动画的点线面和框选的图层，以及queryTable上勾选的点线面和框选的图层。一旦面板destroy，就将所有图层移除。***
+
+    ***初始化图层id，给相应的图层添加增删方法，将所有图层(layer)添加到地图上。***
+
+    ```
 
 
+    initlayer: function() {
+        var that = this;
+        //初始化图层（layerId）
+        var pointLayerId = '';
+        var polylineLayerId = '';
+        var polygonLayerId = '';
+        var tablePointLayerId = '';
+        var tablePolylineLayerId = '';
+        var polylinePointLayerId = '';
+        var patrolTempId = '';
+        var sole = new Date().getMilliseconds();
+        var pointLayerId = 'point-layer-' + sole;
+        var polylineLayerId = 'polyline-layer-' + sole;
+        var polylinePointLayerId = 'polyline-point-layer-' + sole;
+        var polygonLayerId = 'polygon-layer-' + sole;
+        var tablePointLayerId = 'table-point-layer-' + sole;
+        var tablePolylineLayerId = 'poly-line-layer-' + sole;
+        var patrolTempId = 'patrol-temp-layer-' + sole;
 
-2. 地图初始化和销毁
+        //初始化点图层，并添加增删方法
+        that.pointLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: pointLayerId,
+        });
+        that.pointLayer.on('graphic-add', function(gra) {
+        
+        });
+        that.pointLayer.on('graphic-remove', function(gra) {
+        
+        });
+        //初始化线图层，并添加增删方法
+        that.lineLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: polylineLayerId,
+        });
+        that.lineLayer.on('graphic-add', function(gra) {
+        that.getLength();
+        });
+        that.lineLayer.on('graphic-remove', function(gra) {
+        that.getLength();
+        });
+        //初始化表格点图层
+        that.tablePointLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: tablePointLayerId,
+        });
+        //初始化表格线图层
+        that.tablePolylineLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: tablePolylineLayerId,
+        });
+        that.tablePolypointlineLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: tablePolylineLayerId,
+        });
+        
+        that.linePointLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: polylinePointLayerId,
+        });
 
-***初始化一个面板上的所有图层，包括手动画的点线面和框选的图层，以及queryTable上勾选的点线面和框选的图层。一旦面板destroy，就将所有图层移除。***
+        //初始化面图层
+        that.polygonLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        // 'id': 'patrolPolygon'
+        id: polygonLayerId,
+        });
+        //初始化框选图层
+        that.tempLayer = new this.mapWnd.esri.layers.GraphicsLayer({
+        id: patrolTempId,
+        });
+        that.mapWnd.map.addLayer(that.tempLayer, 1);
+        // that.mapWnd.map.addLayer(that.roundLayer, 2);
+        that.mapWnd.map.addLayer(that.polygonLayer, 3);
+        that.mapWnd.map.addLayer(that.lineLayer, 4);
+        that.mapWnd.map.addLayer(that.linePointLayer, 5);
+        that.mapWnd.map.addLayer(that.pointLayer, 6);
+        that.mapWnd.map.addLayer(that.tablePointLayer, 7);
+        that.mapWnd.map.addLayer(that.tablePolylineLayer, 8);
+        that.mapWnd.map.addLayer(that.tablePolypointlineLayer, 2);
+    },
 
-***初始化图层id，给相应的图层添加增删方法，将所有图层(layer)添加到地图上。***
-
-```
-
-
-initlayer: function() {
-    var that = this;
-    //初始化图层（layerId）
-    var pointLayerId = '';
-    var polylineLayerId = '';
-    var polygonLayerId = '';
-    var tablePointLayerId = '';
-    var tablePolylineLayerId = '';
-    var polylinePointLayerId = '';
-    var patrolTempId = '';
-    var sole = new Date().getMilliseconds();
-    var pointLayerId = 'point-layer-' + sole;
-    var polylineLayerId = 'polyline-layer-' + sole;
-    var polylinePointLayerId = 'polyline-point-layer-' + sole;
-    var polygonLayerId = 'polygon-layer-' + sole;
-    var tablePointLayerId = 'table-point-layer-' + sole;
-    var tablePolylineLayerId = 'poly-line-layer-' + sole;
-    var patrolTempId = 'patrol-temp-layer-' + sole;
-
-    //初始化点图层，并添加增删方法
-    that.pointLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: pointLayerId,
-    });
-    that.pointLayer.on('graphic-add', function(gra) {
-    
-    });
-    that.pointLayer.on('graphic-remove', function(gra) {
-      
-    });
-    //初始化线图层，并添加增删方法
-    that.lineLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: polylineLayerId,
-    });
-    that.lineLayer.on('graphic-add', function(gra) {
-      that.getLength();
-    });
-    that.lineLayer.on('graphic-remove', function(gra) {
-      that.getLength();
-    });
-    //初始化表格点图层
-    that.tablePointLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: tablePointLayerId,
-    });
-    //初始化表格线图层
-    that.tablePolylineLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: tablePolylineLayerId,
-    });
-    that.tablePolypointlineLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: tablePolylineLayerId,
-    });
-    
-    that.linePointLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: polylinePointLayerId,
-    });
-
-    //初始化面图层
-    that.polygonLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      // 'id': 'patrolPolygon'
-      id: polygonLayerId,
-    });
-    //初始化框选图层
-    that.tempLayer = new this.mapWnd.esri.layers.GraphicsLayer({
-      id: patrolTempId,
-    });
-    that.mapWnd.map.addLayer(that.tempLayer, 1);
-    // that.mapWnd.map.addLayer(that.roundLayer, 2);
-    that.mapWnd.map.addLayer(that.polygonLayer, 3);
-    that.mapWnd.map.addLayer(that.lineLayer, 4);
-    that.mapWnd.map.addLayer(that.linePointLayer, 5);
-    that.mapWnd.map.addLayer(that.pointLayer, 6);
-    that.mapWnd.map.addLayer(that.tablePointLayer, 7);
-    that.mapWnd.map.addLayer(that.tablePolylineLayer, 8);
-    that.mapWnd.map.addLayer(that.tablePolypointlineLayer, 2);
-  },
-
-```
+    ```
 ***销毁地图上面板上的所有图层。***
 ```
 destroyLayer: function() {
@@ -367,7 +370,7 @@ destroyLayer: function() {
 
 ```
 
-3. 地图画点线面
+2. 地图画点线面
 
     - 画点
     ***戳点***
@@ -585,117 +588,117 @@ destroyLayer: function() {
     ```
 
 
-5. queryTable 点的勾选以及删除
+3. queryTable 点的勾选以及删除
 
-***地图上创建点时候，给grafic gid属性,再把grafig添加到图层上。移除时判断勾选的点gid是否等于之前创建点时候图层赋予的gid，相等则移除点图层***
+    ***地图上创建点时候，给grafic gid属性,再把grafig添加到图层上。移除时判断勾选的点gid是否等于之前创建点时候图层赋予的gid，相等则移除点图层***
 
-```
-    addTablePoint: function(geo,gid,layId) {
-        var that = this;
+    ```
+        addTablePoint: function(geo,gid,layId) {
+            var that = this;
 
-        var typePointUrl = that.typePointUrl('point');
-        var graphic = new that.mapWnd.esri.Graphic(geo, that.sysmbolPoint, {
-        type: queryPanelComp.getParams().layerInfos[0] ? queryPanelComp.getParams().layerInfos[0].dname : '核查',
-        img: 'mark4',
-        buffer:'80.0',
-        equipid: gid,
-        equiporigin:typePointUrl.url+'/'+layId,
-        equipparam:typePointUrl.equipparam,
-        gid:gid
-        });
-        that.tablePointLayer.add(graphic);
-        that.tablePointNum = that.tablePointLayer.graphics.length;
-        that.mapWnd.map.centerAt(geo);
-        that.getPointsSum();
-    },
-```
-
-```
-    removeTablePoint: function(geo,gid) {
-        var that = this;
-        if(that.tablePointLayer.graphics){
-        $(that.tablePointLayer.graphics).each(function(key,gra){
-            if(gra.attributes.gid == gid){
-            that.tablePointLayer.remove(gra);
-            return false;
-            }
-        })
-        }
-        that.tablePointNum = that.tablePointLayer.graphics.length;
-        that.getPointsSum();
-    },
-```
-6. queryTable 线的勾选以及删除以及长度计算
-***利用图层的删减计算长度，图层增加一条线，遍历图层计算线的长度。图层减少一条线，遍历图层，计算线的长度。每次重新遍历，不用减法计算。全选操作也是如此。***
-```
-    addTablePolylineNumber: function(geo,gid,pipeLenth,layId) {
-        var that = this;
-        var typePointUrl = that.typePointUrl('line');
-        var centerpoint = mapWnd.getCenterOfPolyline(geo.paths);
-        
-        var graphic = new mapWnd.esri.Graphic(geo, this.sysmbolPolyline, {
-        equipid: gid,
-        linelen: pipeLenth,
-        buffer:'80.0',
-        equiporigin:typePointUrl.url+'/'+layId,
-        equipparam:typePointUrl.equipparam,
-        type: queryPanelComp.getParams().layerInfos[0].dname,
-        gid:gid
-        });
-        
-        // 添加线，计算线的长度
-        that.tablePolylineLayer.add(graphic);
-        var sum = 0;
-        for(var j=0;j<that.tablePolylineLayer.graphics.length;j++){
-        sum += parseFloat(that.tablePolylineLayer.graphics[j].attributes.linelen);
-        }
-        that.tablePipeLength = sum;
-        that.getLength();
-
-        var passPoint = geo.paths[0];
-        for (var i = 0; i < passPoint.length; i++) {
-        var point = new that.mapWnd.esri.geometry.Point({
-            x: passPoint[i][0],
-            y: passPoint[i][1],
-            spatialReference: mapWnd.map.spatialReference,
-        });
-        var pointSym = new that.eContext.$.ecity.mapWnd.esri.symbol.PictureMarkerSymbol(
-            'images/point.png',
-            10,
-            10
-        );
-        var graphic = new that.mapWnd.esri.Graphic(point, pointSym, {
-            type: 0,
-            contents: [],
+            var typePointUrl = that.typePointUrl('point');
+            var graphic = new that.mapWnd.esri.Graphic(geo, that.sysmbolPoint, {
+            type: queryPanelComp.getParams().layerInfos[0] ? queryPanelComp.getParams().layerInfos[0].dname : '核查',
             img: 'mark4',
-        });
-        that.tablePolypointlineLayer.add(graphic);
-        }
-        // that.mapWnd.map.centerAt(centerpoint);
-        that.mapWnd.map.centerAndZoom(centerpoint,8);
-        // that.getLength();
-    },
-```
+            buffer:'80.0',
+            equipid: gid,
+            equiporigin:typePointUrl.url+'/'+layId,
+            equipparam:typePointUrl.equipparam,
+            gid:gid
+            });
+            that.tablePointLayer.add(graphic);
+            that.tablePointNum = that.tablePointLayer.graphics.length;
+            that.mapWnd.map.centerAt(geo);
+            that.getPointsSum();
+        },
+    ```
 
-```
-    removeTablePolylineNumber: function(geo,gid,pipeLenth){
-        var that = this;
-        if(that.tablePolylineLayer.graphics){
-        $(that.tablePolylineLayer.graphics).each(function(key,gra){
-            if(gra.attributes.gid == gid){
-            that.tablePolylineLayer.remove(gra);
-            return false;
+    ```
+        removeTablePoint: function(geo,gid) {
+            var that = this;
+            if(that.tablePointLayer.graphics){
+            $(that.tablePointLayer.graphics).each(function(key,gra){
+                if(gra.attributes.gid == gid){
+                that.tablePointLayer.remove(gra);
+                return false;
+                }
+            })
             }
-        })
-        }
-        var sum = 0;
-        for(var j=0;j<that.tablePolylineLayer.graphics.length;j++){
-        sum += parseFloat(that.tablePolylineLayer.graphics[j].attributes.linelen);
-        }
-        that.tablePipeLength = sum;
-        that.getLength();
-    },
-```
+            that.tablePointNum = that.tablePointLayer.graphics.length;
+            that.getPointsSum();
+        },
+    ```
+4. queryTable 线的勾选以及删除以及长度计算
+    ***利用图层的删减计算长度，图层增加一条线，遍历图层计算线的长度。图层减少一条线，遍历图层，计算线的长度。每次重新遍历，不用减法计算。全选操作也是如此。***
+    ```
+        addTablePolylineNumber: function(geo,gid,pipeLenth,layId) {
+            var that = this;
+            var typePointUrl = that.typePointUrl('line');
+            var centerpoint = mapWnd.getCenterOfPolyline(geo.paths);
+            
+            var graphic = new mapWnd.esri.Graphic(geo, this.sysmbolPolyline, {
+            equipid: gid,
+            linelen: pipeLenth,
+            buffer:'80.0',
+            equiporigin:typePointUrl.url+'/'+layId,
+            equipparam:typePointUrl.equipparam,
+            type: queryPanelComp.getParams().layerInfos[0].dname,
+            gid:gid
+            });
+            
+            // 添加线，计算线的长度
+            that.tablePolylineLayer.add(graphic);
+            var sum = 0;
+            for(var j=0;j<that.tablePolylineLayer.graphics.length;j++){
+            sum += parseFloat(that.tablePolylineLayer.graphics[j].attributes.linelen);
+            }
+            that.tablePipeLength = sum;
+            that.getLength();
+
+            var passPoint = geo.paths[0];
+            for (var i = 0; i < passPoint.length; i++) {
+            var point = new that.mapWnd.esri.geometry.Point({
+                x: passPoint[i][0],
+                y: passPoint[i][1],
+                spatialReference: mapWnd.map.spatialReference,
+            });
+            var pointSym = new that.eContext.$.ecity.mapWnd.esri.symbol.PictureMarkerSymbol(
+                'images/point.png',
+                10,
+                10
+            );
+            var graphic = new that.mapWnd.esri.Graphic(point, pointSym, {
+                type: 0,
+                contents: [],
+                img: 'mark4',
+            });
+            that.tablePolypointlineLayer.add(graphic);
+            }
+            // that.mapWnd.map.centerAt(centerpoint);
+            that.mapWnd.map.centerAndZoom(centerpoint,8);
+            // that.getLength();
+        },
+    ```
+
+    ```
+        removeTablePolylineNumber: function(geo,gid,pipeLenth){
+            var that = this;
+            if(that.tablePolylineLayer.graphics){
+            $(that.tablePolylineLayer.graphics).each(function(key,gra){
+                if(gra.attributes.gid == gid){
+                that.tablePolylineLayer.remove(gra);
+                return false;
+                }
+            })
+            }
+            var sum = 0;
+            for(var j=0;j<that.tablePolylineLayer.graphics.length;j++){
+            sum += parseFloat(that.tablePolylineLayer.graphics[j].attributes.linelen);
+            }
+            that.tablePipeLength = sum;
+            that.getLength();
+        },
+    ```
 
 #### 开发中的修正
 
