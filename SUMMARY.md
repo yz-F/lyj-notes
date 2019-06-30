@@ -60,6 +60,8 @@
             * [Complete-React-Redux-Tutoria](tools/react/redux/Complete-React-Redux-Tutoria.md)
     <!-- * [work]()    
         * [lyj-work-summary](tools/work/work-summary.md)   -->
+    * [work]()    
+        * [lyj-makescheme-summary](tools/work/lyj-makescheme-summary.md)  
      
           
     
