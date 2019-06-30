@@ -337,7 +337,7 @@
     },
 
     ```
-***销毁地图上面板上的所有图层。***
+    ***销毁地图上面板上的所有图层。***
 ```
 destroyLayer: function() {
     if (this.pointLayer) {
