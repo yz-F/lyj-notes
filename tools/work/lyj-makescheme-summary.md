@@ -6,10 +6,9 @@
 
 #### $.ecity.Class 封装写法
 
-1. $.ecity 封装
+- $.ecity 封装
 
     ```
-
     var MakeScheme = $.ecity.Class({
 
         //此处定义类的私有属性
@@ -99,7 +98,7 @@
         })    
     ```
 
-2. 封装的传参
+- 封装的传参
 
     ```
         makeScheme = new MakeScheme({
@@ -116,10 +115,7 @@
             mapWnd: mapWnd,
             patrolSvr: patrolSvr,
             tableServer: tableServer,
-
             //handleTypechange是onTypeChange的回调函数。用于处理外部的接口
-            
-
             onTypeChange: function(res, itemType) {
                 orderby = null;
                 if (res) {
@@ -130,7 +126,7 @@
 
     ```
 
-3. 封装方法的联动
+- 封装方法的联动
     ***实现 makeScheme 中方案改变，eyQueryPanel 进行联动***
     ```
         index.html
@@ -189,7 +185,7 @@
     ```
 
 
-4. 封装将DOM与DOM操作分离
+- 封装将DOM与DOM操作分离
     ```
         //将dom事件从dom上解绑
         bindEvent:function(){
@@ -202,7 +198,7 @@
 
     ```
 
-5. 闭包也可以进行模块封装（避免全局污染）
+- 闭包也可以进行模块封装（避免全局污染）
 
     *** 参考资料：javascript高级程序设计（第4章<变量作用域和内存问题>，第6章<面向对象的程序设计>，第7章<函数表达式>）***
     
@@ -257,7 +253,7 @@
     线画在grafic上,线图层添加grafic,map添加线图层。
     面画在grafic上,面图层添加grafic,map添加面图层。 -->
 
-1. 地图初始化和销毁
+- 地图初始化和销毁
 
     ***初始化一个面板上的所有图层，包括手动画的点线面和框选的图层，以及queryTable上勾选的点线面和框选的图层。一旦面板destroy，就将所有图层移除。***
 
@@ -370,7 +366,7 @@ destroyLayer: function() {
 
 ```
 
-2. 地图画点线面
+- 地图画点线面
 
     - 画点
     ***戳点***
@@ -588,7 +584,7 @@ destroyLayer: function() {
     ```
 
 
-3. queryTable 点的勾选以及删除
+- queryTable 点的勾选以及删除
 
     ***地图上创建点时候，给grafic gid属性,再把grafig添加到图层上。移除时判断勾选的点gid是否等于之前创建点时候图层赋予的gid，相等则移除点图层***
 
@@ -628,7 +624,7 @@ destroyLayer: function() {
             that.getPointsSum();
         },
     ```
-4. queryTable 线的勾选以及删除以及长度计算
+- queryTable 线的勾选以及删除以及长度计算
     ***利用图层的删减计算长度，图层增加一条线，遍历图层计算线的长度。图层减少一条线，遍历图层，计算线的长度。每次重新遍历，不用减法计算。全选操作也是如此。***
     ```
         addTablePolylineNumber: function(geo,gid,pipeLenth,layId) {
@@ -702,17 +698,17 @@ destroyLayer: function() {
 
 #### 开发中的修正
 
-1. 变量声明（声明，命名规范，命名格式）
+- 变量声明（声明，命名规范，命名格式）
 
     - [语雀](https://www.yuque.com/cabin/func/mgonz2#aggIg)
     - [javascipt高级程序设计-第四章：变量，作用域与内存问题。](https://www.yuque.com/cabin/func/mgonz2#aggIg)
     - [语雀培训规范](https://www.yuque.com/cabin/train/lv5kxx#68mndb)
-2. 重复逻辑
+- 重复逻辑
     - 添加单个点线与全选添加点线，是分两个方法写的。其实可以放在一个方法里面。
-3. 全局变量
+- 全局变量
     - 使用var声明的变量会自动被添加到最接近的环境。如果初始化变量没有声明，则变量会被自动添加到全局环境。
 
-4. 方法问题：写代码是最后一步，先思考好，再写代码，调试太浪费时间。
+- 方法问题：写代码是最后一步，先思考好，再写代码，调试太浪费时间。
 
 
 #### 学习资料参考
