@@ -720,6 +720,13 @@ destroyLayer: function() {
 - [JavaScript 中的回调](https://www.w3cplus.com/javascript/callbacks-in-javascript.html)
 - [es6 javascript的class的静态方法、属性和实例属性](https://blog.csdn.net/qq_30100043/article/details/53542966)
 - [static](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/static)
+- 低耦合高内聚，makescheme中注册的onTypeChange方法中，queryPanel初始化。
+queryPanel 中 onClick事件，触发tablePanel初始化。
+
+- $.ecity.class中，封装的共有方法，是对外的接口。共有方法变了，外部的接口也都一起改变。
+
+- 面板加载时，从上至下渲染,延迟问题。
+
 <!-- - [class 封装 闭包]() -->
 <!-- - [uuid]() -->
 <!-- - [作用域,变量]() -->
