@@ -3,6 +3,104 @@
 ![eolink](../../../image/vue/vuex/vuex1.png)
 #### vuex
 
+> axios/api/dictionary.js
+
+获取region字典
+
+```
+    import $axios from '../config.js'
+
+    // 公共字典url
+    const GET_DICTIONARY = '/auth/dictionaries/findByParentId'
+
+    // download权限字典url
+    const GET_DOWNLOAD_AUTH = '/manage/resource/findDownAuthority'
+
+    export const getDictionary = (id) => {
+    return $axios({
+        url: GET_DICTIONARY,
+        method: 'post',
+        data: {
+        parentId: id
+        }
+    })
+    }
+
+    // 字典api
+
+    // 获取status字典
+    export function getDicByStatus () {
+    return getDictionary(1)
+    }
+    //获取region字典
+    export function getDicByRegion () {
+    return getDictionary(5)//参数为id号
+    }
+
+    // 获取download权限字典
+    export function getDicByDownload () {
+    return $axios({
+        url: GET_DOWNLOAD_AUTH,
+        method: 'post'
+    })
+    }
+
+```
+>src\axios\api\dictionary.js
+```
+  import $axios from '../config.js'
+
+// 公共字典url
+const GET_DICTIONARY = '/auth/dictionaries/findByParentId'
+
+// download权限字典url
+const GET_DOWNLOAD_AUTH = '/manage/resource/findDownAuthority'
+
+export const getDictionary = (id) => {
+  return $axios({
+    url: GET_DICTIONARY,
+    method: 'post',
+    data: {
+      parentId: id
+    }
+  })
+}
+
+// 字典api
+
+// 获取status字典
+export function getDicByStatus () {
+  return getDictionary(1)
+}
+// 获取region字典
+export function getDicByRegion () {
+  return getDictionary(5)
+}
+
+// 获取download权限字典
+export function getDicByDownload () {
+  return $axios({
+    url: GET_DOWNLOAD_AUTH,
+    method: 'post'
+  })
+}
+
+// 获取mainGroup数据
+export function getDicByMainGroup () {
+  return getDictionary(1)
+}
+
+// 获取formDelivery数据
+export function getDicByFormDelivery () {
+  return getDictionary(89)
+}
+
+// 获取ecoStatus数据
+export function getDicByEcoStatus () {
+  return getDictionary(1)
+}
+
+```
 > store/modules/dictionary.js
 
 ```
@@ -77,47 +175,7 @@
 
 ```
 
-> axios/api/dictionary.js
 
-```
-    import $axios from '../config.js'
-
-    // 公共字典url
-    const GET_DICTIONARY = '/auth/dictionaries/findByParentId'
-
-    // download权限字典url
-    const GET_DOWNLOAD_AUTH = '/manage/resource/findDownAuthority'
-
-    export const getDictionary = (id) => {
-    return $axios({
-        url: GET_DICTIONARY,
-        method: 'post',
-        data: {
-        parentId: id
-        }
-    })
-    }
-
-    // 字典api
-
-    // 获取status字典
-    export function getDicByStatus () {
-    return getDictionary(1)
-    }
-    //获取region字典
-    export function getDicByRegion () {
-    return getDictionary(5)//参数为id号
-    }
-
-    // 获取download权限字典
-    export function getDicByDownload () {
-    return $axios({
-        url: GET_DOWNLOAD_AUTH,
-        method: 'post'
-    })
-    }
-
-```
 > 组件
 
 ```
@@ -263,10 +321,18 @@ created(){
     this.pageInit()
   },
   computed:{
-    ...mapGetters('dictionary',['regionList'])
+    // 1. 获取getter
+    ...mapGetters('dictionary',['regionList','typeList']),
+    ...mapGetters("concept", ["tableData","pager","params"]),
   },
   methods:{
+     //获取列表数据
+    ...mapGetters('dictionary',['regionList'])
+     //2. 获取数据字典,dictionary为命名空间
     ...mapActions('dictionary',['getRegionDic']),
+    //获取列表数据
+    ...mapActions("concept", ["getTableDataApi", "setParams"]),
+     //4. 同步调用
     pageInit () {
       this.getRegionList()
       this.getRegionList()
@@ -281,13 +347,15 @@ created(){
     search (e) {
       console.log(e)
     },
+    // 3. 获取字典数据
     async getRegionList () {
       await this.getRegionDic();
       this.searchList[0].options = this.regionList;
     },
-     async getRegionList () {
-      await this.getRegionDic();
-      this.searchList[0].options = this.regionList;
+     async getTypeList () {
+      await this.getTypeDic();
+      this.searchList[1].options = this.typeList;
     },
   }
 ```
+![eolink](../../../image/vue/vuex/vuex2.png)

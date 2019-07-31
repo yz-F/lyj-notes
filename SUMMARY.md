@@ -28,7 +28,9 @@
             * [keep-alive](tools/vue/content2/keep-alive.md)
             * [life-time](tools/vue/content2/life-time.md)
         * [vuex]()
-            * [component](tools/vue/vuex/data-dictionary.md)
+            * [data-dictionary](tools/vue/vuex/data-dictionary.md)
+            * [computed](tools/vue/vuex/computed.md)
+            * [computed](tools/vue/vuex/vuex-todo.md)
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
