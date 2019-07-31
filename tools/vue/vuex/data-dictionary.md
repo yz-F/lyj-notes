@@ -37,71 +37,13 @@
     return getDictionary(5)//参数为id号
     }
 
-    // 获取download权限字典
-    export function getDicByDownload () {
-    return $axios({
-        url: GET_DOWNLOAD_AUTH,
-        method: 'post'
-    })
     }
 
 ```
->src\axios\api\dictionary.js
-```
-  import $axios from '../config.js'
 
-// 公共字典url
-const GET_DICTIONARY = '/auth/dictionaries/findByParentId'
-
-// download权限字典url
-const GET_DOWNLOAD_AUTH = '/manage/resource/findDownAuthority'
-
-export const getDictionary = (id) => {
-  return $axios({
-    url: GET_DICTIONARY,
-    method: 'post',
-    data: {
-      parentId: id
-    }
-  })
-}
-
-// 字典api
-
-// 获取status字典
-export function getDicByStatus () {
-  return getDictionary(1)
-}
-// 获取region字典
-export function getDicByRegion () {
-  return getDictionary(5)
-}
-
-// 获取download权限字典
-export function getDicByDownload () {
-  return $axios({
-    url: GET_DOWNLOAD_AUTH,
-    method: 'post'
-  })
-}
-
-// 获取mainGroup数据
-export function getDicByMainGroup () {
-  return getDictionary(1)
-}
-
-// 获取formDelivery数据
-export function getDicByFormDelivery () {
-  return getDictionary(89)
-}
-
-// 获取ecoStatus数据
-export function getDicByEcoStatus () {
-  return getDictionary(1)
-}
-
-```
 > store/modules/dictionary.js
+
+vuex 处理字典数据
 
 ```
     import { getDicByStatus, getDicByDownload, getDicByRegion } from '@/axios/api/dictionary'
@@ -139,7 +81,7 @@ export function getDicByEcoStatus () {
         state.regionList = regionList
     }
     }
-
+    //异步操作，并且通过提交 mutation 来记录 action 状态变更
     const actions = {
     async getStatusDic ({state, commit}) {
         if (state.statusList.length) return
@@ -176,13 +118,15 @@ export function getDicByEcoStatus () {
 ```
 
 
-> 组件
+> 组件 search
+
+![eolink](../../../image/vue/vuex/vuex2.png)
 
 ```
 ...
 <search :list="searchList" @search="search"></search>
 ...
-
+// vuex语法糖
 import {mapGetters,mapActions} from 'vuex';
 ...
 data(){
@@ -196,96 +140,29 @@ data(){
           key: 'Region',
           placeholder: 'Region/Country'
         },
-        // {
-        //   options: [
-        //     {
-        //       value: '1',
-        //       label: 'Country1'
-        //     }, {
-        //       value: '2',
-        //       label: 'Country2'
-        //     }, {
-        //       value: '3',
-        //       label: 'Country3'
-        //     }, {
-        //       value: '4',
-        //       label: 'Country4'
-        //     }, {
-        //       value: '5',
-        //       label: 'Country5'
-        //     }
-        //   ],
-        //   value: '',
-        //   key: 'Country',
-        //   placeholder: 'Country'
-        // },
-        //type数据字典没配
+        
+        //type数据字典
         {
           options: [
-            {
-              value: '1',
-              label: 'Type   1'
-            }, {
-              value: '2',
-              label: 'Type2'
-            }, {
-              value: '3',
-              label: 'Type3'
-            }, {
-              value: '4',
-              label: 'Type4'
-            }, {
-              value: '5',
-              label: 'Type5'
-            }
+            
           ],
           value: '',
           key: 'Type',
           placeholder: 'Type'
         },
-        //Segment数据字典没配
+        //Segment数据字典
         {
           options: [
-            {
-              value: '1',
-              label: 'Segment Care1'
-            }, {
-              value: '2',
-              label: 'Segment Care2'
-            }, {
-              value: '3',
-              label: 'Segment Care3'
-            }, {
-              value: '4',
-              label: 'Segment Care4'
-            }, {
-              value: '5',
-              label: 'Segment Care5'
-            }
+            
           ],
           value: '',
           key: 'Segment',
           placeholder: 'Segment'
         },
-        //position数据字典没配
+        //position数据字典
         {
           options: [
-            {
-              value: '1',
-              label: 'Position1'
-            }, {
-              value: '2',
-              label: 'Position2'
-            }, {
-              value: '3',
-              label: 'Position3'
-            }, {
-              value: '4',
-              label: 'Position4'
-            }, {
-              value: '5',
-              label: 'Position5'
-            }
+            
           ],
           value: '',
           key: 'Position',
@@ -358,4 +235,3 @@ created(){
     },
   }
 ```
-![eolink](../../../image/vue/vuex/vuex2.png)
