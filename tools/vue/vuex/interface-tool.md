@@ -27,7 +27,7 @@ module.exports = {
 src\axios\api_urls
 ```
     export const url = {
-  list:'/manage/concept/list'
+  uploadfile:'/auth/public/upload_file',
 }
 
 ```
@@ -50,10 +50,10 @@ import {
 //     method: 'get'
 //   })
 // }
-// 获取basf concept列表数据
-export function getTableData(params) {
-  console.log(url.list)
-  return $axios.post(url.list,params)
+// 获取basf uploadfile数据
+export function getUploadFileData (params) {
+  console.log(url.uploadfile)
+  return $axios.post(url.uploadfile,params)
 }
 
 ```
@@ -61,63 +61,31 @@ export function getTableData(params) {
 ### vuex
 src\store\modules\concept.js
 ```
-    import { getTableData } from '@/axios/api/concept.js'
-//表格数据
-const UPDATE_TABLEDATA = 'UPDATE_TABLEDATA'
-//表格总数
-const UPDATE_TOTAL = 'UPDATE_TOTAL'
-//参数
-const UPDATE_PARAMS = 'UPDATE_PARAMS'
-const state = {
-  tableData: [],
-  //分页参数
-  pager: {
-      current: 1,
-      size: 10,
-      total: 0
-  },
-  //表格查询参数
-  params: {
-    areaId: '',
-    type:'',
-    segment:'',
-    position:'',
-    updateYear:'',
-    status:1,
-    statuses:'',
-    uploader:'',
-  }
-}
+    import { getUploadFileData } from '@/axios/api/concept.js'
+//uploadfile接口
+const UPDATE_UPLOADFILE = 'UPDATE_UPLOADFILE'
+
+
 
 const getters = {
-  tableData: state => state.tableData,
-  pager: state => state.pager,
-  params: state => state.params
+  uploadFileList: state => state.uploadFileList,
 }
 
 const mutations = {
-  [UPDATE_TABLEDATA](state, tableData) {
-      state.tableData = tableData
+    /***********CONCEPT UPLOADFILE**************/
+  [UPDATE_UPLOADFILE](state, uploadFileList) {
+    state.uploadFileList = uploadFileList
   },
-  [UPDATE_TOTAL](state, total) {
-      state.pager = { ...state.pager, total }
-  },
-  [UPDATE_PARAMS](state,params){
-      state.params = {...state.params,params}
-  }
 };
 
 const actions = {
-  async getTableDataApi ({ commit }, params) {
-    const {status} = {...params}
-    let { data: res } = await getTableData({status})
-    // console.log(res.data);
-    commit(UPDATE_TABLEDATA, res)
-    commit(UPDATE_TOTAL, 10000)
-  },
-
-  setParams ({commit},params){
-    commit('UPDATE_PARAMS',params)
+  /***********CONCEPT UPLOADFIOLE**************/
+  async getUploadFileDataApi({ commit },params) {
+    // const {marketSegment,pid} = {...segmentParams}
+    let { data: res } = await getUploadFileData(params)
+    // let { data: res } = await getSegmentData({params})
+    commit(UPDATE_UPLOADFILE, res)
+    // commit(UPDATE_TOTAL, 10000)
   }
 
 }
@@ -129,5 +97,105 @@ export default {
   mutations,
   actions
 }
+
+```
+
+###组件
+src\components\content\concept\editNewdialog.vue
+```
+<el-form-item label="Picture:" prop="imgFileSrc">
+  <div class="add">
+    <el-input class="input green" v-model="uploadFileForm.imgFileSrc" clearable @clear="clear('img')"></el-input>
+    <el-upload class="change"
+              action=""
+              :before-upload="e => imgUpload('img', e)"><span>{{form.imgFileSrc ? 'change' : 'upload'}}</span></el-upload>
+  </div>
+</el-form-item>
+
+import {mapGetters, mapActions} from 'vuex'
+
+props: {
+  //要提交的表单
+    uploadFileForm: {
+      type: Object,
+      default: () => {
+        return {
+          //第一页
+          imgFileSrc:'',
+          imgFileId: '',
+          conceptName:'',
+          selectYear:'',
+          regionCountry:'',
+          segment:''
+          //第二页
+        }
+      }
+    },
+}
+
+ methods: {
+    //获取列表数据
+    ...mapActions("concept", [
+      "getUploadFileDataApi",
+    ]),
+    //获取数据字典
+    ...mapActions("dictionary", [
+      "getSegmentsDic",
+      "getCountryDic"
+    ]),
+    // 校验大小并上传img
+    imgUpload (type,file) {
+      let data = {
+        file,
+        path: type === 'img' ? `/trend/picture` : `/trend/${type}`
+      }
+      if (file.size > this.maxsize * 1024 * 1024) return this.$message.error('不能超过' + this.maxsize + 'M');
+      this.loading = true;
+      this.getUploadFileList(data)
+        // .then(res => {
+        //   console.log(res);
+        // })
+      debugger
+    },
+ }  
+ // 去掉文件
+    clear (type) {
+      this.form[`${type}FileSrc`] = ''
+      this.form[`${type}FileId`] = ''
+    },
+    async getUploadFileList(data) {
+      await this.getUploadFileDataApi(data);
+      var res = this.uploadFileList;
+      this.uploadFileForm['imgFileSrc'] = res.fileSrc
+      this.uploadFileForm['imgFileId'] = res.id
+    },
+  computed:{
+    ...mapGetters("concept", ["uploadFileList"]),
+    ...mapGetters("dictionary", [
+      "segmentsList",
+      "countryList"
+    ]),
+    isVisible: {
+      get() {
+        return this.isShow
+      },
+      set(val) {
+        console.log(112313)
+        this.$emit('close-dialog')
+        Object.assign(this.form, {
+          userName: '',
+          password: '',
+          confirmPassword: '',
+          telephone: '',
+          email: '',
+          role: '',
+          status: '',
+          expert: ''
+        })
+      }
+    }
+  }
+}  
+
 
 ```
