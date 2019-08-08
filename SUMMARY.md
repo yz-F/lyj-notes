@@ -32,6 +32,7 @@
             * [computed](tools/vue/vuex/computed.md)
             * [vuex-todo](tools/vue/vuex/vuex-todo.md)
             * [es6](tools/vue/vuex/es6.md)
+            * [eslink](tools/vue/vuex/eslink.md)
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
