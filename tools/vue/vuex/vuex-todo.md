@@ -66,6 +66,8 @@
   //5. actions异步操作，对mutation进行相关封装
   //此处将两个字典 TODO add
   const actions = {
+    这里的params是从外界传入的参数
+    //async getSwiperListDataApi ({ commit }, params)
     async getPositionDic ({commit}) {
       if (state.positionList.length) return
       try {
