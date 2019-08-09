@@ -33,7 +33,8 @@
             * [vuex-todo](tools/vue/vuex/vuex-todo.md)
             * [es6](tools/vue/vuex/es6.md)
             * [eslink](tools/vue/vuex/eslink.md)
-            * [eslink](tools/vue/vuex/store.md)
+            * [store](tools/vue/vuex/store.md)
+            * [router-push](tools/vue/vuex/router-push.md)
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
