@@ -35,6 +35,7 @@
             * [eslink](tools/vue/vuex/eslink.md)
             * [store](tools/vue/vuex/store.md)
             * [router-push](tools/vue/vuex/router-push.md)
+            * [install-question](tools/vue/vuex/install-question.md)
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
