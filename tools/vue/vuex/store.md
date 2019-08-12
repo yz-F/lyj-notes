@@ -168,3 +168,25 @@
     }
     }
 ```
+
+### vue组件获取getter数据时候，需要在store中定义getter,不然取不到值
+src\store\modules\conceptCollection.js
+```
+    const getters = {
+    pager: state => state.pager,
+    param: state => state.param
+    }
+```
+src\components\content\conceptsCollection\NewConcepts.vue
+```
+  computed: {
+    ...mapGetters('conceptCollection', [
+      'tabNewListData',
+      'pager',
+      'param'
+      // 'newConcepts',
+      // 'fomltnBeans',
+      // 'trdLstBeans'
+    ])
+  },
+```

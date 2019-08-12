@@ -2,9 +2,9 @@
 config/index.js
 
 ```
-onst path = require('path')
+  onst path = require('path')
 
-module.exports = {
+  module.exports = {
   dev: {
 
     // Paths
@@ -24,37 +24,38 @@ module.exports = {
 ```
 
 ### 获取数据
-src\axios\api_urls
-```
-    export const url = {
-  uploadfile:'/auth/public/upload_file',
-}
+- src\axios\api_urls
+  ```
+      export const url = {
+    uploadfile:'/auth/public/upload_file',
+    }
 
-```
+  ```
 
-src\axios\api\concept.js
-```
-    import $axios from '../config.js'
-import { url } from '../api_urls/concept.js'
-import {
-  _get,
-  _post,
-  _delete,
-  _put,
-  _upload
-} from '../request.js'
-// example
-// export function getTableData () {
-//   return $axios({
-//     url: 'xxxxxx',
-//     method: 'get'
-//   })
-// }
-// 获取basf uploadfile数据
-export function getUploadFileData (params) {
-  console.log(url.uploadfile)
-  return $axios.post(url.uploadfile,params)
-}
+- src\axios\api\concept.js
+
+  ```
+      import $axios from '../config.js'
+    import { url } from '../api_urls/concept.js'
+    import {
+      _get,
+      _post,
+      _delete,
+      _put,
+      _upload
+    } from '../request.js'
+    // example
+    // export function getTableData () {
+    //   return $axios({
+    //     url: 'xxxxxx',
+    //     method: 'get'
+    //   })
+    // }
+    // 获取basf uploadfile数据
+    export function getUploadFileData (params) {
+      console.log(url.uploadfile)
+      return $axios.post(url.uploadfile,params)
+    }
 
 ```
 

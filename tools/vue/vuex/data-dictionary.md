@@ -123,13 +123,13 @@ vuex 处理字典数据
 ![eolink](../../../image/vue/vuex/vuex2.png)
 
 ```
-...
-<search :list="searchList" @search="search"></search>
-...
+  ...
+  <search :list="searchList" @search="search"></search>
+  ...
 // vuex语法糖
 import {mapGetters,mapActions} from 'vuex';
 ...
-data(){
+  data(){
     return {
         searchList: [
         {
@@ -193,8 +193,8 @@ data(){
         }
       ],
     }
-}
-created(){
+  }
+  created(){
     this.pageInit()
   },
   computed:{
