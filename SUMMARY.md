@@ -35,11 +35,15 @@
             * [eslink](tools/vue/vuex/eslink.md)
             * [store](tools/vue/vuex/store.md)
             * [router-push](tools/vue/vuex/router-push.md)
+<<<<<<< HEAD
             * [vue-router-tab](tools/vue/vuex/vue-router-tab.md)
             * [mixins](tools/vue/vuex/mixins.md)
             * [v-loading](tools/vue/vuex/v-loading.md)
             * [download](tools/vue/vuex/download.md)
             * [v-model](tools/vue/vuex/v-model.md)
+=======
+            * [install-question](tools/vue/vuex/install-question.md)
+>>>>>>> 69b09e098f0c84bacccc3078a57376030d8d3234
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->

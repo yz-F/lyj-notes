@@ -205,7 +205,7 @@ import {mapGetters,mapActions} from 'vuex';
   methods:{
      //获取列表数据
     ...mapGetters('dictionary',['regionList'])
-     //2. 获取数据字典,dictionary为命名空间
+     //2. 获取数据字典,dictionary为命名空间,getRegionDic组件里定义方法，mapActions注册做关联
     ...mapActions('dictionary',['getRegionDic']),
     //获取列表数据
     ...mapActions("concept", ["getTableDataApi", "setParams"]),
