@@ -191,3 +191,22 @@ src\components\content\conceptsCollection\NewConcepts.vue
     ])
   },
 ```
+
+### store中getter可以改变返回的字段的名
+如果之前state里面存取的字段是 data{name:111 id:111}--map--> data{title:111,id:111}
+```
+    const getters = {
+        subCategoryListData: state => state.subCategoryListData.map(v => {
+            return { title: v.name, id: v.id }
+        }),
+    }
+    //不需要变化的话
+    const getters = {
+        subCategoryListData: state => state.subCategoryListData
+    }
+```
+
+### 模板{}，不加有错
+```
+ this.getSearchByLetterListDataApi({keyword})
+```
