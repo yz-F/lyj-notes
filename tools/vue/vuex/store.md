@@ -1,5 +1,5 @@
 
-### 内部传参数要加state,解构赋值要包括号
+### 内部传参数要加state,解构赋值要包括号,内部传参和外部传参
 
 ```
     import { getSwiperListData } from '@/axios/api/conceptCollections.js'
@@ -41,7 +41,8 @@
     * @param {*} params
     */
 
-    // async getSwiperListDataApi ({ commit }, params) 外部方法传参要加params
+    // async getSwiperListDataApi ({ commit }, params) 外部方法传参params
+    // async getSwiperListDataApi ({ commit , params}) 内部方法传参params
     async getSwiperListDataApi ({ state, commit }) {
         // 内部方法传参要加state,解构赋值要包括号
 
