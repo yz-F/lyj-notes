@@ -42,6 +42,7 @@
             * [v-model](tools/vue/vuex/v-model.md)
             * [install-question](tools/vue/vuex/install-question.md)
             * [fummz-matching](tools/vue/vuex/install-fummz-matching.md)
+            * [element-tab](tools/vue/vuex/element-tab.md)
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
