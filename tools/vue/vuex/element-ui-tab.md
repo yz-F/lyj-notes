@@ -50,3 +50,18 @@
         })
     },
 ```
+
+### 根据isUpload传数据
+
+```
+ <my-table
+    :tableData="isUpload?tableUploadData.records:tableData.records"
+    :selectTab="selTab"
+    :pager="pager"
+    :action="action"
+    @pagerChange="pagerChange"
+    @tableApproval="tableApproval"
+    :isHasPermission="isUpload"
+></my-table>
+
+```
