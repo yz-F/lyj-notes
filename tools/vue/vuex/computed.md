@@ -49,7 +49,7 @@ computed:{
 ```
 
 
-### 根据不同的prop判断应该显示的表格的operation
+### computed 根据不同的prop判断应该显示的表格的operation
 ```
   <el-table :data="tableData" style="width: 100%">
     <el-table-column prop="title" label="Name" width="180"></el-table-column>
