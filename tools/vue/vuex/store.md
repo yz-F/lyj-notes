@@ -210,3 +210,52 @@ src\components\content\conceptsCollection\NewConcepts.vue
 ```
  this.getSearchByLetterListDataApi({keyword})
 ```
+
+### commit(UPLOAD_SEARCHAPPROVAL, res)
+> 像字典查询出来的数据，需要更新
+> 像approve操作只是做审核，没有数据查询则不需要更新
+
+```
+    /**
+    *
+    * approver search
+    * @param {*} { commit }
+    * @param {*} params
+    */
+    async getApprovalListApi ({ commit }, params) {
+        try {
+        let { data: res } = await getSearchApproveUserListData(params)
+        commit(UPLOAD_SEARCHAPPROVAL, res)
+        console.log(res)
+        } catch (e) {
+        Message.error(e)
+        }
+    },
+    /**
+    *
+    * approval
+    * @param {*} { commit }
+    * @param {*} params
+    */
+    async getSearchApprovalApi ({ commit }, params) {
+        try {
+        await getApprovalData(params)
+        } catch (e) {
+        Message.error(e)
+        }
+    },
+```
+> 从组件中更新step.此处需要commit(STEP, params)
+
+```
+/**
+   *
+   * step
+   * @param {*} {commit}
+   * @param {*} params
+   */
+  async getStepDataApi ({ commit }, params) {
+    commit(STEP, params)
+  },
+
+```

@@ -88,8 +88,26 @@ input输入框 -- el-autocomplete
 
 ```
 
-### 保存草稿细节
+### select 可输入 类似模糊搜索
 
->  lauth/concept/saveOrSubmit 
-
-提交参数：step 保存都为0 提交为1
+```
+  <div>
+      <el-select class="item"
+        v-for="(select,index) in listTwo"
+        :key="index"
+        v-model="params[select.key]"
+        clearable
+        :filterable="true"
+        :remote="true"
+        :remote-method="e => remoteMethod({value: e,index: index})"
+        :placeholder="select.placeholder"
+      >
+        <el-option
+          v-for="item in select.options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option>
+      </el-select>
+    </div>
+```

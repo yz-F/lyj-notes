@@ -14,7 +14,6 @@ const mutations = {
   [UPDATE_NEWLOADING] (state, newLoading) {
     state.newLoading = newLoading
   }
-
 }
 //发请求设置为true,请求后为false
 const actions = {
@@ -25,16 +24,22 @@ const actions = {
       commit(UPDATE_OLDTABLISTDATA, res)
       return true
     } catch (e) {
-      commit(UPDATE_NEWLOADING, false)
       return false
     }
+    commit(UPDATE_NEWLOADING, false)
   } 
 }
 ```
 
 
 
+
 ### 组件 newLoading
+```
+ ...mapGetters('concept', [
+      'newLoading'
+    ]),
+```
 
 ```
 <div class="relate-list-container" v-loading="newLoading">
