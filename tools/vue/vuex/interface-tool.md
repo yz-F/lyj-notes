@@ -71,7 +71,7 @@ const UPDATE_UPLOADFILE = 'UPDATE_UPLOADFILE'
 const getters = {
   uploadFileList: state => state.uploadFileList,
 }
-
+```
 const mutations = {
     /***********CONCEPT UPLOADFILE**************/
   [UPDATE_UPLOADFILE](state, uploadFileList) {
@@ -101,7 +101,7 @@ export default {
 
 ```
 
-###组件
+### 组件
 src\components\content\concept\editNewdialog.vue
 ```
 <el-form-item label="Picture:" prop="imgFileSrc">
