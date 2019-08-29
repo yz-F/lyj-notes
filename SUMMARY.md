@@ -51,6 +51,7 @@
             * [interface-tool](tools/vue/vuex/interface-tool.md)
             * [prop](tools/vue/vuex/prop.md)
             * [v-loading](tools/vue/vuex/v-loading.md)
+            * [v-loading](tools/vue/vuex/element-dialog.md)
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->

@@ -14,7 +14,6 @@
         :data="claimDetail"
         stripe
         style="width: 100%">
-        //
         <el-table-column
         prop="title"
         :label="$t('txt.claimsCategory')"
