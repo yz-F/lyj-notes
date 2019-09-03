@@ -1,7 +1,6 @@
 ### tab数据结构调整
 
 ![eolink](../../../image/vue/vuex/vuex16.png)
-![eolink](../../../image/vue/vuex/vuex17.png)
 
 ### 
 
@@ -50,17 +49,64 @@
     },
 ```
 
-### 根据isUpload传数据
+### tab数据结构调整
+![eolink](../../../image/vue/vuex/vuex17.png)
+
+##### 表格
 
 ```
- <my-table
-    :tableData="isUpload?tableUploadData.records:tableData.records"
-    :selectTab="selTab"
-    :pager="pager"
-    :action="action"
-    @pagerChange="pagerChange"
-    @tableApproval="tableApproval"
-    :isHasPermission="isUpload"
-></my-table>
+    <el-table
+        class="zdh-el-table-style"
+        // 列表项
+        :data="claimsData.list"
+        stripe
+        style="width: 100%">
+        // 纵列表头
+        <el-table-column
+        v-for="(item, index) in claimsData.header"
+        :key="index"
+        //prop为表头每一项
+        :prop="item.prop"
+        :label="item.label">
+        </el-table-column>
+    </el-table>
+
+    data: (){
+        return {
+            claimsData: {
+                header: [],
+                list: []
+            }
+        }
+    }
+
+```
+
+#### 结构
+```
+ async getDatas () {
+    if (this.activeName === 'first') {
+    this.topSearchParams.registeredYear = parseInt(this.topSearchParams.registeredYear)
+    await this.getTopDistributionListDataApi({...this.topSearchParams, tabType: 'claimForm'})
+    this.claimAndProductFormList = this.topDiscriptionListData
+    // heard为头部的数组。第一项为Claims/Form，其余为prop 为id 但是显示为form的label
+    this.claimsData.header = [
+        { prop: 'claims', label: 'Claims/Form' },
+        ...this.topDiscriptionListData.forms.map(v => {
+        return {
+            prop: v.id + '',
+            label: v.name
+        }
+        })
+    ]
+    // 列表数据 为claim 映射关系为 id : count
+    this.claimsData.list = this.topDiscriptionListData.dataList.map(v => {
+        let res = { claims: v.claim }
+        v.subList.forEach(item => {
+        res[item.form_id] = item.count
+        })
+        return res
+    })
+}
 
 ```
