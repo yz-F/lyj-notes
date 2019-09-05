@@ -50,8 +50,9 @@
             * [element-ui-tab](tools/vue/vuex/element-ui-tab.md)
             * [interface-tool](tools/vue/vuex/interface-tool.md)
             * [prop](tools/vue/vuex/prop.md)
-            * [v-loading](tools/vue/vuex/v-loading.md)
-            * [v-loading](tools/vue/vuex/element-dialog.md)
+            * [element-dialog](tools/vue/vuex/element-dialog.md)
+            * [el-pagination](tools/vue/vuex/el-pagination.md)
+
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
