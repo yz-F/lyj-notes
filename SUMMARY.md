@@ -52,6 +52,7 @@
             * [prop](tools/vue/vuex/prop.md)
             * [element-dialog](tools/vue/vuex/element-dialog.md)
             * [el-pagination](tools/vue/vuex/el-pagination.md)
+            * [el-pagination](tools/vue/vuex/video-components.md)
 
     <!-- * [travel]()
         * [changsha](tools/travel/ChangSha.md)

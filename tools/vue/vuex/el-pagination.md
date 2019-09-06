@@ -151,3 +151,51 @@
         },
     }
 ```
+更改： 
+```
+    // 分页 查询参数组合
+    getParams () {
+      const { current, size } = this.pager
+      return {
+        // ...this.pageParam,
+        current,
+        size,
+        desc: ['weight'],
+        type: 'New'
+      }
+    },
+    // 分页跳转 设置页码
+    async handleCurrentChange (current) {
+      debugger
+      // 更新分页 页数
+      await this.setPagerApi({ ...this.pager, ...current })
+      debugger
+      const searchParams = {...this.getParams()}
+      await this.getNewTabListDataApi({...searchParams})
+      // this.conceptListBeans = this.tabNewListData.records
+    },
+      vuex
+
+     // 分页 设置page
+        setPagerApi ({commit}, pager) {
+            console.log(pager)
+            commit(UPDATE_SEARCH, {pager})
+        },
+        /**
+    * tab new切换
+    * @param {*} { commit }
+    * @param {*} params
+    */
+    async getNewTabListDataApi ({ state, commit }, params) {
+        debugger
+        commit(UPDATE_NEWLOADING, true)
+        try {
+        let { data: res } = await getTabListData({...params})
+        commit(UPDATE_NEWTABLISTDATA, res)
+        commit(UPDATE_TOTAL, res.total)
+        } catch (e) {
+        }
+        commit(UPDATE_NEWLOADING, false)
+    },
+
+```
