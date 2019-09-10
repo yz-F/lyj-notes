@@ -36,18 +36,14 @@
     current: 1,
     size: 10,
     desc: ['weight']
-    // updateYear: '',
-    // segmentId: '',
-    // areaId: ''
+ 
     },
+
     tabListOldParams: {
         type: 'Old',
         current: 1,
         size: 10,
         desc: ['weight']
-        // updateYear: '',
-        // segmentId: '',
-        // areaId: ''
     }
 
     const getters = {

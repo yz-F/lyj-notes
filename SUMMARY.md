@@ -45,6 +45,7 @@
             * [git](tools/vue/vuex/git.md)
             * [install-question](tools/vue/vuex/install-question.md)
             * [interface-tool](tools/vue/vuex/interface-tool.md)
+            * [mayun-merge](tools/vue/vuex/mayun-merge.md)
             * [mixins](tools/vue/vuex/mixins.md)
             * [prop](tools/vue/vuex/prop.md)
             * [router-push](tools/vue/vuex/router-push.md)
