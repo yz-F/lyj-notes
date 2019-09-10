@@ -55,6 +55,7 @@
             * [v-model](tools/vue/vuex/v-model.md)
             * [video-components](tools/vue/vuex/video-components.md)
             * [vue-router-tab](tools/vue/vuex/vue-router-tab.md)
+            * [vue-watch](tools/vue/vuex/vue-watch.md)
             * [vuex-clear-vmodel](tools/vue/vuex/vuex-clear-vmodel.md)
             * [vuex-todo](tools/vue/vuex/vuex-todo.md)
 
