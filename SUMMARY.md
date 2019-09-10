@@ -38,6 +38,7 @@
             * [element-dialog](tools/vue/vuex/element-dialog.md)
             * [element-tab](tools/vue/vuex/element-tab.md)
             * [element-ui-tab](tools/vue/vuex/element-ui-tab.md)
+            * [elementui-table-sortable](tools/vue/vuex/elementui-table-sortable.md)
             * [es6](tools/vue/vuex/es6.md)
             * [eslink](tools/vue/vuex/eslink.md)
             * [form-rule](tools/vue/vuex/form-rule.md)
