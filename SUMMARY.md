@@ -49,6 +49,7 @@
             * [mayun-merge](tools/vue/vuex/mayun-merge.md)
             * [mixins](tools/vue/vuex/mixins.md)
             * [prop](tools/vue/vuex/prop.md)
+            * [prop](tools/vue/vuex/router-jump.md)
             * [router-push](tools/vue/vuex/router-push.md)
             * [store](tools/vue/vuex/store.md)
             * [v-loading](tools/vue/vuex/v-loading.md)
