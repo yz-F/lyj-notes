@@ -1,13 +1,14 @@
 ### table 根据approvaltime排序
 - [table sortable](https://element.eleme.io/#/zh-CN/component/table#table-column-attributes)
+
 #### 子组件
+
 ```
-    <el-table-column v-if="tabSpecialTime" sortable="custom" prop="updateTime" label="Approve time">
-        <template slot-scope="item">
-            <!-- <span v-if="item.row.updateTime">{{ $moment.unix(item.row.updateTime).format('YYYY-MM-DD HH:mm:ss') }}</span> -->
-            <span v-if="item.row.updateTime">{{ item.row.updateTime}}</span>
-        </template>
-    </el-table-column>
+  <el-table-column v-if="tabSpecialTime" sortable="custom" prop="updateTime" label="Approve time">
+      <template slot-scope="item">
+          <span v-if="item.row.updateTime">{{ item.row.updateTime}}</span>
+      </template>
+  </el-table-column>
 ```
 
 #### 子组件方法
