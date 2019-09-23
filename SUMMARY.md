@@ -33,7 +33,6 @@
             * [data-dictionary](tools/vue/vuex/data-dictionary.md)
             * [document-this](tools/vue/vuex/document-this.md)
             * [download](tools/vue/vuex/download.md)
-            * [vuex-todo](tools/vue/vuex/vuex-todo.md)
             * [el-pagination](tools/vue/vuex/el-pagination.md)
             * [element-dialog](tools/vue/vuex/element-dialog.md)
             * [element-tab](tools/vue/vuex/element-tab.md)
