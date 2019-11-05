@@ -3,7 +3,8 @@
 ```
  //upload模块 撤销预览
 if(type === 'upload-pending'){
-    const {id} = {...row} //解构参数
+
+    const {id} = {row} //解构参数，row为对象，取出id值
     this.getApprovalListApi({id, status:3});//添加参数
 }
 ```
@@ -56,3 +57,7 @@ methords : {
       this.hotConcepts = this.swiperListData.records
     },
 ```
+
+### 箭头函数中
+
+- 没有this,this是外部的函数的。
