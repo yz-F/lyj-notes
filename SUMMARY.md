@@ -29,6 +29,11 @@
       - [component](tools/vue/content2/component.md)
       - [keep-alive](tools/vue/content2/keep-alive.md)
       - [life-time](tools/vue/content2/life-time.md)
+    - [admin-web]()
+      <!-- - [ant-design-pro](tools/vue/admin-web/ant-design-pro.md) -->
+      - [api-config](tools/vue/admin-web/api-config.md)
+      - [router](tools/vue/admin-web/router.md)
+      - [proxy](tools/vue/admin-web/proxy.md)
     - [work-nn]()
       - [token-vuex](tools/vue/work-nn/token-vuex.md)
       - [axios-interceptor](tools/vue/work-nn/axios-interceptor.md)
