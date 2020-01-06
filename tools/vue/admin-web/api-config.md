@@ -176,6 +176,15 @@ export function getPlateformInfo (param) {
 import { getSmsCaptcha, get2step } from '@/api/login'
 
 created () {
+    // 表格请求方法
+    // 加载数据方法 必须为 Promise 对象
+      loadData: parameter => {
+        console.log('loadData.parameter', parameter)
+        return getServiceList(Object.assign(parameter, this.queryParam))
+          .then(res => {
+            return res.result
+          })
+      },
     get2step({ })
       .then(res => {
         this.requiredTwoStepCaptcha = res.result.stepCode
