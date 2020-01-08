@@ -106,3 +106,28 @@ computed:{
   }
 
 ```
+
+### 如果不用await解决异步问题，可以利用computed解决初始化的问题
+```
+<li class="channel_user_list" v-for="(item,index) in members" :key="index">
+export default {
+  data() {
+    return {
+      members2:[]
+    }
+  },
+   computed: {
+    members: {
+        get() {
+            console.log("get---",this.inputCurrent)
+            if(!this.inputCurrent && this.inputCurrent==""){
+                this.members2 =Object.assign(this.$store.state.channelRoom.channelAllUserList)
+            }
+            return this.members2
+        },
+        set(val) {
+        },
+    },
+
+  }
+```

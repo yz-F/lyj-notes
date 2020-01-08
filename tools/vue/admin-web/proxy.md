@@ -1,0 +1,20 @@
+### proxy
+- [proxy](https://juejin.im/post/5c0a6be4f265da616f6fc79c)
+```
+  module.exports = {
+  devServer: {
+    proxy: {
+      // 反向代理
+      '/api': {
+        target: 'http://192.168.53.69:8080', // 实际请求的地址等于target加上/api
+        ws: false, // 是否开启websocket
+        changeOrigin: true, // 是否开启代理服务
+        pathRewrite: {
+          // 路径重写
+          '^/api': '' // 将开头的/api换成空,所以实际的请求地址就变成了target加上你的路由路径
+        }
+      }
+    }
+  }
+}
+```
