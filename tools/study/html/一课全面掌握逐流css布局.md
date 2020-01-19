@@ -95,6 +95,44 @@
 ##### 等分布局
 ##### 等高布局
 ##### css3多列布局
-
+##### tips
+```
+   width: 1200px;
+   position: absolute;
+   top: 337px;
+   margin: auto;
+   left:0;
+   right:0;
+```
+```
+把图片src放进去。在上面绝对定位加div
+```
+```
+clear:both //清除定位，又可以在上面加新的定位
+```
+```
+//图片自适应写法
+<!-- 头部 -->
+    <div class="helping_center_banner">
+      <div style="width: 1200px;margin: 0 auto;">
+          <h1 class="helping_center_title text-center" style="text-align: left;line-height: 400px;color: #ffffff"> 帮助中心</h1>
+      </div>
+    </div>
+```
+```
+/* 帮助中心 */
+.helping_center_banner {
+	width: 100%;
+	height: 346px;
+	line-height: 215px;
+	background: #e6e3de url("./images/helping_bg.png") 50% no-repeat;
+	background-size: 3000px 346px
+}
+.helping_center_title {
+	font-weight: 700;
+	font-size: 45px;
+	color: #67635c
+}
+```
 
 
