@@ -261,4 +261,16 @@ import Vue from './vue.js' //引入的包
 ![111](../../../image/b-ma/b-ma-80.png)
 
 ### vue项目第二天 02
-- 对路由
+- 当点击首页的时候，再从首页
+某个链接点击进入到下一个页面的
+时候，这个导航的选中仍存在
+![111](../../../image/b-ma/b-ma-81.png)
+- 对路由进行点击@click需要加原生的标签 @click.native
+![111](../../../image/b-ma/b-ma-82.png)
+- 导航守卫
+![111](../../../image/b-ma/b-ma-83.png)
+![111](../../../image/b-ma/b-ma-84.png)
+![111](../../../image/b-ma/b-ma-85.png)
+![111](../../../image/b-ma/b-ma-86.png)
+![111](../../../image/b-ma/b-ma-87.png)
+![111](../../../image/b-ma/b-ma-88.png)
