@@ -255,3 +255,10 @@ import Vue from './vue.js' //引入的包
 - 列表跳转列表详情页
 ![111](../../../image/b-ma/b-ma-77.png)
 ![111](../../../image/b-ma/b-ma-78.png)
+
+- 懒加载
+![111](../../../image/b-ma/b-ma-79.png)
+![111](../../../image/b-ma/b-ma-80.png)
+
+### vue项目第二天 02
+- 对路由
