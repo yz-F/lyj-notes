@@ -56,7 +56,7 @@ require(['moduleA','moduleB'],function(moduleA，moduleB){
 })
 
 ```
-![111](../../../image/webpack/webpack-04.png)
+![111](../../image/webpack/webpack-04.png)
 
 ***require.js的原理是，使用jsonp实现一个异步加载并执行回调***
 ### ESModule

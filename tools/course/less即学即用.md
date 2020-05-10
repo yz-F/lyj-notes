@@ -35,10 +35,10 @@
 - 定位
 
 ### 嵌套规则
-![111](../../../image/html/css56.png)
+![111](../../image/html/css56.png)
 
 ### @arguments变量
-![111](../../../image/html/css57.png)
+![111](../../image/html/css57.png)
 ```
 @arguments代替所有的参数
 
@@ -48,4 +48,4 @@
 ```
 
 ### 避免编译和@important
-![111](../../../image/html/css58.png)
+![111](../../image/html/css58.png)
