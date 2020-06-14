@@ -122,6 +122,7 @@
       - [js从入门到放弃](tools/course/js从入门到放弃.md)
       - [一课全面掌握逐流css布局](tools/course/一课全面掌握逐流css布局.md)
       - [webpack打包原理详解](tools/course/webpack打包原理详解.md)
+      - [用Vue监听购物车数量及模糊查询](tools/course/用Vue监听购物车数量及模糊查询.md)
   - [react]()
 
     - [react-content]()
