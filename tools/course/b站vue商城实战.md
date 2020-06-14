@@ -303,5 +303,29 @@ import Vue from './vue.js' //引入的包
 
 ### vue项目第五天 - 购物车实现 -01
 
+1. 引入组件并引入方法
+![111](../../image/b-ma/b-ma-100.png)
+![111](../../image/b-ma/b-ma-101.png)
+![111](../../image/b-ma/b-ma-102.png)
+![111](../../image/b-ma/b-ma-103.png)
+
+2. 小球动画
+![111](../../image/b-ma/b-ma-104.png)
+![111](../../image/b-ma/b-ma-105.png)
+![111](../../image/b-ma/b-ma-106.png)
+![111](../../image/b-ma/b-ma-107.png)
+![111](../../image/b-ma/b-ma-108.png)
+![111](../../image/b-ma/b-ma-109.png)
+
+3. bus总线
+![111](../../image/b-ma/b-ma-110.
+png)
+![111](../../image/b-ma/b-ma-111.png)
+![111](../../image/b-ma/b-ma-112.png)
+![111](../../image/b-ma/b-ma-113.png)
+
+4. set
+![111](../../image/b-ma/b-ma-114.png)
+
 ### vue项目第五天 - 购物车实现 -02
 
