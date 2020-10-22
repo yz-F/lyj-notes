@@ -1,5 +1,7 @@
 - vuex
 
+![11](../../../image/xnkj/xnkj01.png)
+
 ```
 import Vue from 'vue'
 import http from 'sinitek-util/src/utils/http'
