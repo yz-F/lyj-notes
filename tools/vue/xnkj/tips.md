@@ -22,11 +22,13 @@
               <el-button size="small" type="primary">选择文件</el-button>
             </el-upload>
 ```
+
 - methord
+
 ```
 // 编辑回显，显示文件，只用给个名字。
 edit(row) {
-    
+
       this.editForm.file = [];
       if (row.fileName) {
         this.fileList = [];
@@ -38,12 +40,12 @@ edit(row) {
       console.log("this.fileList", this.fileList);
 
     },
-// 移除文件    
+// 移除文件
  handleRemove(file, fileList) {
       this.fileList = [];
       this.addForm.fileName = null;
       this.editForm.fileName = null;
-    },    
+    },
 // 只上传一个文件
 handleSuccess(res, file, fileList) {
       this.addForm.fileName = true;
@@ -53,7 +55,7 @@ handleSuccess(res, file, fileList) {
         fileList.splice(0, 1);
       }
       this.fileList = fileList;
-    },    
+    },
 // 编辑保存
 // 编辑保存
     editSave(resolve, reject) {
@@ -98,5 +100,109 @@ handleSuccess(res, file, fileList) {
         }
         // this.$refs.editFormRef.resetFields();
       });
-    },    
+    },
 ```
+
+### 合并单元格
+
+![11](../../../image/xnkj/xnkj04.png)
+
+```
+<el-table
+                    border
+                    :span-method="objectSpanMethodOne"
+                    :data="tableOneData"
+                    ref="tableOne"
+                  >
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="0"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="1"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="2"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="3"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="4"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="5"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="6"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="7"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="8"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="9"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="10"
+                      align="center"
+                    ></el-table-column>
+                    <el-table-column
+                      showOverflowTooltip
+                      prop="11"
+                      align="center"
+                    ></el-table-column>
+                  </el-table>
+
+  objectSpanMethodOne({ row, column, rowIndex, columnIndex }) {
+      // 偶数行号 合并行
+      if (rowIndex <= 7) {
+        //第一列
+        if (columnIndex === 0) {
+          return [1, 2];
+        } else if (columnIndex === 1) {
+          return [0, 0];
+        }
+      } else if (rowIndex > 7) {
+        if (columnIndex === 0) {
+          //偶数行号
+          if (rowIndex % 2 === 0 && rowIndex > 7) {
+            // 列数合并
+            return {
+              rowspan: 2,
+              colspan: 1
+            };
+          } else {
+            return {
+              rowspan: 0,
+              colspan: 1
+            };
+          }
+        }
+      }
+    },
+```
+
+###
