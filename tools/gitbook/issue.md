@@ -65,3 +65,7 @@ gitbook --lrport 9999 serve
         at Error (native)
 
 * 答：[文件更改时git服务无法重启？](https://github.com/GitbookIO/gitbook/issues/1379)<br>空白文件添加虚拟数据。
+
+> 执行git clone提示“fatal: unable to access”
+
+* 答：把https改成git即可
