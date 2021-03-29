@@ -69,3 +69,11 @@ gitbook --lrport 9999 serve
 > 执行git clone提示“fatal: unable to access”
 
 * 答：把https改成git即可
+
+> gitignore配置
+
+* 答：[gitignore配置](https://blog.csdn.net/ihtml5/article/details/87928109)
+
+> 执行git pull 提示fatal: unable to access 'https://swca.aisino.com/aaics/web-ui-vue.git/': SSL certificate problem: unable to get local issuer certificate,
+
+* 答：[git config --global http.sslVerify false](http://www.bubuko.com/infodetail-3611075.html)
