@@ -23,6 +23,36 @@ config/index.js
 
 ```
 
+### 跨域问题
+
+```
+// const BACKEND = process.env.WEB_ADAPTER_URL || 'https://web-adapter.test.aisino.com/';
+
+module.exports = {
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://web-adapter.test.aisino.com/:8080',
+        ws: true,
+        changeOrigin: true
+      },
+      '/msg_board': {
+        // target: 'http://api-ibot.aitest.aisino.com/',
+        target: 'http://economist-ibot.test.aisino.com/:8080',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite:{
+          '^/msg_board':'/api'
+        }
+      },
+     
+
+    },
+  },
+};
+
+```
+
 ### 获取数据
 - src\axios\api_urls
   ```
