@@ -92,3 +92,62 @@
 
 
 ```
+
+
+### vuex中引用elementui中的组件
+```
+ import { MessageBox } from 'element-ui';
+ MessageBox.confirm('您有正在进行的下载任务，切换企业需要重新下载，是否切换？', '提示', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+    iconClass: '2'
+  }).then(async () => {
+    console.log("that",that)
+    await that.dispatch('switchFirmAction',jparams)
+    
+  }).catch(() => {
+
+  })
+```
+### 组合action，action中调用别的action
+
+
+
+```
+  // 查询插盘用户和企业列表是否有关联关系，并返回当前列表企业信息
+  async switchQyAction({state, commit}, payload) {
+    // MessageBox.confirm
+    console.log("i come")
+    var that = this
+    console.log(state.compareComonListAndJsp, "999")
+    let nsrsbh = ''
+    if(state.compareComonListAndJsp && state.compareComonListAndJsp.nsrsbh){
+      nsrsbh = state.compareComonListAndJsp.nsrsbh
+    }
+    console.log(payload, "666")
+    const info = JSON.parse(localStorage.getItem('info'))
+    console.log(info, "333")
+    console.log(localStorage.getItem('lock'), "444")
+    // let jparams = {}     
+      if (localStorage.getItem('lock') > 0 && nsrsbh !== info.taxcode) {
+        MessageBox.confirm('您有正在进行的下载任务，切换企业需要重新下载，是否切换？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+          iconClass: '2'
+        }).then(async () => {
+          console.log("that",that)
+          await that.dispatch('switchFirmAction',jparams)
+          
+        }).catch(() => {
+
+        })
+      } else {
+        console.log("i leave")
+        // 此处是重点
+          await that.dispatch('switchFirmAction',jparams)
+          // await this.switchFirmAction(jparams)
+        }
+  },
+```
