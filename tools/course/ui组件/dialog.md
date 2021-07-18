@@ -18,3 +18,10 @@
 
 - 组件功能
   ![111](../../../image/ui-com/ui-dialog/dialog-08.png) 
+
+
+  ### dialog修饰符作用
+
+  -   ![111](../../../image/ui-com/ui-dialog/dialog-09.png) 
+  -   ![111](../../../image/ui-com/ui-dialog/dialog-10.png) 
+  -   ![111](../../../image/ui-com/ui-dialog/dialog-11.png) 
