@@ -1,7 +1,7 @@
 ## 当修改了内容提交，回退两种方案
-### git reset b5c3971 
+### git reset b5c3971 (保留了暂存区的文件)
 ![travis](../../../image/reset/gitchange.png)
-### git status显示状态
+### git status显示状态 （丢失了暂存区的文件）
 ![travis](../../../image/reset/gitchange1.png)
 >右侧显示change文件，并可以修改。修改后在其提示操作，点击“+”，将change放入暂存区，并提交后。**或者在命令行打 add commit 命令也可解决**
 

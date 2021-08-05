@@ -4,7 +4,7 @@
 
 > 代入排除法
 
-- 什么时候用
+- 什么时候用ƒ
 ![travis](../../../../image/fenbi/shuliang02.jpeg)
 
 - 怎么用
