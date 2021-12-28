@@ -86,8 +86,8 @@
         * [changsha](tools/travel/ChangSha.md)
         * [xian](tools/travel/xian.md)      -->
   - [course]()
-    - [980]()
-      - [guokao]()
+    - [guokao]()
+      - [980]()
         - [数量关系-方法精讲01](tools/course/guokao/980/数量关系-方法精讲01.md)
   - [interview]()
     - [跨域相关](tools/interview/cross-domain/cross-domain.md)
