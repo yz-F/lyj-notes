@@ -81,11 +81,9 @@
       - [vue-watch](tools/vue/vuex/vue-watch.md)
       - [vuex-clear-vmodel](tools/vue/vuex/vuex-clear-vmodel.md)
       - [vuex-todo](tools/vue/vuex/vuex-todo.md)
-
-    <!-- * [travel]()
-        * [changsha](tools/travel/ChangSha.md)
-        * [xian](tools/travel/xian.md)      -->
-
+  - [course]()
+      - [980]()
+        - [数量关系-方法精讲01](tools/course/980/数量关系-方法精讲01.md)
   - [interview]()
     - [跨域相关](tools/interview/cross-domain/cross-domain.md)
     - [深入理解 javascript 原型和闭包](tools/interview/prototype-closure/prototype-closure.md)
