@@ -61,21 +61,69 @@
 
 - 同样方法也要从父元素，移到子元素里面
 
+### elemet-plus提供了再次输入密码不正确的校验
+![111](../../image/html/css70.png)
+![111](../../image/html/css71.png)
+
+图片可能有些地方不太准
+### npm install axios -- save
+
+```
+1. 文件中引用,import axios
+
+2. main.ts 挂载在全局
+
+```
+
+![111](../../image/html/css72.png)
+![111](../../image/html/css73.png)
+### axios 封装
+
+![111](../../image/html/css74.png)
+![111](../../image/html/css75.png)
+![111](../../image/html/css76.png)
+![111](../../image/html/css77.png)
+![111](../../image/html/css78.png)
+
+```
+1. 请求中，可以加 Loading,token
+
+2. axios的状态包括 pending , reject , resolve
+
+
+```
+### postman
+
+![111](../../image/html/css79.png)
+![111](../../image/html/css80.png)
+![111](../../image/html/css81.png)
+### 跨域配置
+
+![111](../../image/html/css82.png)
+![111](../../image/html/css83.png)
+![111](../../image/html/css84.png)
+![111](../../image/html/css86.png)
+
+
+### 常用解构
+
+![111](../../image/html/css85.png)
+
+### 跳转外部链接到项目,通过后台，由后台提供token.也可以过几秒跳转首页。
+
+![111](../../image/html/css87.png)
+![111](../../image/html/css88.png)
+![111](../../image/html/css89.png)
+![111](../../image/html/css90.png)
 ### 
 
-![111](../../image/html/css69.png)
+![111](../../image/html/css85.png)
 ### 
 
-![111](../../image/html/css69.png)
+![111](../../image/html/css85.png)
 ### 
 
-![111](../../image/html/css69.png)
+![111](../../image/html/css85.png)
 ### 
 
-![111](../../image/html/css69.png)
-### 
-
-![111](../../image/html/css69.png)
-### 
-
-![111](../../image/html/css69.png)
+![111](../../image/html/css85.png)
