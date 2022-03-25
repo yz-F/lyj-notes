@@ -206,6 +206,11 @@ M    readme.txt**
 
 #### 你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作：把本地仓库的内容推送到GitHub仓库
 
+>fatal: 远程 origin 已经存在。
+
+此时只需要将远程配置删除，重新添加即可；git remote rm origin
+
+
 >现在，我们根据GitHub的提示，在本地的learngit仓库下运行命令：
 
     $ git remote add origin git@github.com:michaelliao/learngit.git
