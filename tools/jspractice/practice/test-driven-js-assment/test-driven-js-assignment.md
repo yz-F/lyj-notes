@@ -54,7 +54,7 @@ function sum(arr) {
         }
     }
 
-###移除数组中的元素
+### 移除数组中的元素
 >Arra y.prototype.filter()
     function remove(arr,item){
         return arr.filter(function(ele){
