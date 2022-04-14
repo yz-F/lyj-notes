@@ -46,3 +46,82 @@ console.log(str.split(key).length -1)
 
 
 ```
+
+- String.prototype.repeat()
+
+```
+repeat() 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。
+str.repeat(count)
+重复次数不能为负数。
+"abc".repeat(-1)     // RangeError: repeat count must be positive and less than inifinity
+"abc".repeat(0)      // ""
+"abc".repeat(1)      // "abc"
+"abc".repeat(2)      // "abcabc"
+"abc".repeat(3.5)    // "abcabcabc" 参数count将会被自动转换成整数.
+"abc".repeat(1/0)    // RangeError: repeat count must be positive and less than inifinity
+```
+
+```
+
+描述
+
+•输入一个字符串，请按长度为8拆分每个输入字符串并进行输出；
+
+•长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。
+
+
+let line
+while (line = readline()) {
+    const overNumber = line.length % 8
+    const result = line.concat(new String("0").repeat(overNumber ? 8 - overNumber : 0))
+    for (let i = 0; i < result.length;i++) {
+        console.log(result.substring(i, i += 8))
+    }
+}
+```
+
+- 
+
+```
+
+```
+
+```
+
+```
+- 
+
+```
+
+```
+
+```
+
+```
+- 
+
+```
+
+```
+
+```
+
+```
+- 
+
+```
+
+```
+
+```
+
+```
+- 
+
+```
+
+```
+
+```
+
+```
