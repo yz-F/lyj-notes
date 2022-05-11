@@ -1,6 +1,6 @@
 ### src\modules\app\domain\App.js（class封装，注意vm，可以从vue页面传入当前组件实列，相当于调用this）
 
--
+- app.js
 
 ```
 class AppCenterSoftware {
