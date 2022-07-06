@@ -3,11 +3,11 @@
 找出某个元素在数组中的索引
 indexof
 
-### 通过索引删除某个元素
-splice
+  ### 通过索引删除某个元素
+  splice
 
-### 复制一个数组
-slice
+  ### 复制一个数组
+  slice
 
 ### 一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
 Array.from()
@@ -17,7 +17,7 @@ Array.of()
 
 ### 所有数组实例都会从 Array.prototype 继承属性和方法。修改 Array 的原型会影响到所有的数组实例
 
-属性 
+属性
 
 1. Array.prototype.constructor
 所有的数组实例都继承了这个属性，它的值就是 Array，表明了所有的数组都是由 Array 构造出来的。
@@ -30,4 +30,4 @@ Array.of()
 
 copyWithin
 
-### 
+###
