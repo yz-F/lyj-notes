@@ -37,7 +37,6 @@ module.exports = {
         changeOrigin: true
       },
       '/msg_board': {
-        // target: 'http://api-ibot.aitest.aisino.com/',
         target: 'http://economist-ibot.test.aisino.com/:8080',
         ws: true,
         changeOrigin: true,

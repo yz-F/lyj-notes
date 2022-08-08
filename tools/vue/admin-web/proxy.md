@@ -18,3 +18,18 @@
   }
 }
 ```
+
+### proxy 有时候可能是(请求少带一斜杆)
+```
+
+// 请求拦截器
+service.interceptors.request.use(
+  config => {
+    const urlPath = config.url.slice(0, 1);
+    // 给请求header加token
+    if (urlPath.indexOf('/') > -1) {
+      config.url = 'apis/' + config.url.slice(1);
+    } else {
+      config.url = 'apis/' + config.url;
+    }
+```
