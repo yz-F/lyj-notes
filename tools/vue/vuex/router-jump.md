@@ -10,6 +10,22 @@
       })
       this.$emit('refreshCurrentPage', id)
     }
+     '$store.state.auth.panAutoClickLoginMsg'(newval) {
+      if (newval) {
+        eventBus.$emit('closeLoginAuto')
+        this.equipmentLoginTwo(newval)
+      }
+    },
+    '$route.matched': {
+      handler(val) {
+        // console.log(val, '路由匹配')
+        this.activeMenu = val[val.length - 1].path
+        // console.log(this.activeMenu, '9998')
+        this.activeRouter()
+      },
+      immediate: true,
+    },
+
   },
 ```
 - router-link跳转写法
