@@ -205,4 +205,150 @@ handleSuccess(res, file, fileList) {
     },
 ```
 
-###
+### el-upoad 以及base64图片回显。以及校验与否
+
+```
+ <el-form-item :rules="this.companyBasicInfo.materialList == '1' ? rules.materialList : [{required: false}]" :label="$t('enterprise.M')" prop="materialList">
+              
+                <el-upload
+                  :headers="headers"
+                  :action="action"
+                  :file-list="companyBasicInfo.materialList"
+                  list-type="picture-card"
+                  :before-upload="beforeUpload" :on-success="addDialogSuccessUpload" :on-remove="handleRemove">
+                    <i slot="default" class="el-icon-plus"></i>
+                    <div slot="file" slot-scope="{file}">
+                      <img
+                        class="el-upload-list__item-thumbnail"
+                        :src="file.docDownloadUrlBase" alt=""
+                      >
+                      <span class="el-upload-list__item-actions">
+                        <span
+                          class="el-upload-list__item-preview"
+                          @click="handlePictureCardPreview(file)"
+                        >
+                          <i class="el-icon-zoom-in"></i>
+                        </span>
+                        <span
+                          v-if="!typeDisabled"
+                          class="el-upload-list__item-delete"
+                          @click="handleDownload(file)"
+                        >
+                          <!-- <i class="el-icon-download"></i> -->
+                        </span>
+                        <span
+                          v-if="!typeDisabled"
+                          class="el-upload-list__item-delete"
+                          @click="handleRemove(file)"
+                        >
+                          <i class="el-icon-delete"></i>
+                        </span>
+                      </span>
+                    </div>
+                </el-upload>
+                
+              </el-form-item>
+
+```
+
+```
+data
+headers: {Authorization: getToken()},
+//跨域导致前缀被改。
+ action: location.origin + '/api/ship/uploadFile', // 上传接口地址
+
+```
+```
+js
+headers: {Authorization: getToken()},
+
+ // 上传文件前文件的校验
+    beforeUpload (file) {
+      const suffixName = file.name.substring(file.name.lastIndexOf('.') + 1)
+      const isLimit = file.size/1024  < 5*1024
+      if (suffixName !== 'jpg' && suffixName !== 'png' && suffixName !== 'jpeg' && suffixName !== 'pdf') {
+      // if (suffixName !== 'png') {
+        this.$message.error('支持上传png文件')
+        return false
+      }
+      if (!isLimit) {
+        this.$message.error('单个文件大小不能超过5M')
+        return false
+      }
+      return true
+    },
+
+    // 上传成功回调的钩子
+    // docDownloadUrlBase 如果没有base64还是显示docDownloadUrlBase： file.url,
+    addDialogSuccessUpload (response, file, fileList) {
+ 
+      console.log("response", response)
+      console.log("file", file)
+      let fileObj = {
+        docName: file.name,
+        docDownloadUrl: file.response.path,
+        id:'',
+        docDownloadUrlBase: file.url,
+      }
+      this.companyBasicInfo.materialList.push(fileObj)
+    },
+
+     // 上传失败回调的钩子
+    addDialogErrorUpload () {
+      this.$message({
+        message: '上传失败请重试！',
+        type: 'error'
+      })
+    },
+    handleRemove (file, fileList) {
+      this.companyBasicInfo.materialList = []
+    },
+
+// 外面传进来的图片数据，后台坑我，还让我自己转
+  //回显图片数据要重新调用接口一个一个图片获取地址
+          let promises = []
+          if(editInfo.data.materialList && editInfo.data.materialList.length>0){
+
+            editInfo.data.materialList.map(async item => {
+            
+              let proRes = await downloadImg({imageUrl:item.docDownloadUrl});
+              if(proRes && proRes.code == '0000'){
+                console.log("proRes",proRes.data)
+                promises.push({id:'',docName:item.docName,docDownloadUrl:proRes.data.imageUrl,docDownloadUrlBase:proRes.data.base64})
+              }
+  
+            });
+          }
+          this.$refs.companyInfo.companyBasicInfo.materialList = promises
+    // 预览
+    handlePictureCardPreview(file) {
+      this.dialogImageUrl = file.docDownloadUrlBase;
+      this.dialogVisible = true;
+    },
+```
+
+```
+
+// 回显弹窗
+
+ <el-dialog
+      class="viewImg"
+      :before-close="closeDialog"
+      :visible.sync="dialogVisible"
+      append-to-body
+      :close-on-click-modal="false"
+      :close-on-press-escape="false"
+    >
+    <div>
+      <img width="100%" :src="dialogImageUrl" alt="" />
+    </div>
+    <span slot="footer" class="dialog-footer">
+      <el-button
+        type="primary"
+        style="background-color:#3a5ee8;width: 90px;height:34px;line-height:11px"
+        @click="closeDialog"
+        >确 定</el-button
+      >
+    </span>
+    </el-dialog>
+```

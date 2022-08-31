@@ -39,6 +39,10 @@ mutation:{
 ```
 
 this.$store.dispatch('asyncadd',params)
+
+this.$store.dispatch('LogOut').then(() => {
+  location.reload()
+})
 ```
 
 ```

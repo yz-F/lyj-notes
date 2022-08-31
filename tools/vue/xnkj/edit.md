@@ -249,7 +249,7 @@
                                 <el-form
                                     :model="ruleComplexInfo"
                                     label-width="117px"
-                                    style="width: 90%"
+                                    style="width: 90%" 
                                     :rules="ruleComplexInfoRules"
                                     ref="ruleComplexInfo"
                                 >
