@@ -1,5 +1,6 @@
 ![11](../../../image/xnkj/xnkj01.png)
 
+// 注意 ref绑定的值 要和data的值一样 ruleBasicInfo
 ```
 <template>
     <div class="app-container" style="background-color: #ffffff">
