@@ -290,6 +290,9 @@ headers: {Authorization: getToken()},
         id:'',
         docDownloadUrlBase: file.url,
       }
+      if(file.raw.type==='application/pdf'){
+        fileObj.fileData = file.raw.fileData
+      }
       this.companyBasicInfo.materialList.push(fileObj)
     },
 
@@ -301,7 +304,13 @@ headers: {Authorization: getToken()},
       })
     },
     handleRemove (file, fileList) {
-      this.companyBasicInfo.materialList = []
+      console.log("file",file)
+      console.log("file",this.companyBasicInfo.materialList)
+      this.companyBasicInfo.materialList = this.companyBasicInfo.materialList.filter( item => {
+        return (item.docDownloadUrl!==file.docDownloadUrl)
+      })
+      this.$forceUpdate()
+      console.log("file",this.companyBasicInfo.materialList)
     },
 
 // 外面传进来的图片数据，后台坑我，还让我自己转

@@ -3013,3 +3013,63 @@ export default {
 </style>
 
 ```
+
+
+### 注意resoleve
+```
+
+var p1 = new Promise((resolve, reject) => {
+        this.$refs.companyInfo.$refs['companyBasicInfo'].validate((valid) => {
+          if (valid) {
+            resolve()
+          } else {
+            // this.$message.warning("请填写必填项");
+          }
+        })
+      })
+      var p2 = new Promise((resolve, reject) => {
+        if(this.$refs.companyInfo.$refs['companyBasicInfoTwoRef']){
+                  this.$refs.companyInfo.$refs['companyBasicInfoTwoRef'].validate((valid) => {
+        // this.$refs.companyInfo.$refs['companyBasicInfoTwoRef'].validate((valid) => {
+          if (valid) {
+            resolve()
+          } else {
+            // this.$message.warning("请填写必填项");
+          }
+        })}else{
+          resolve()
+        }
+      })
+      var p3 = new Promise((resolve, reject) => {
+        if(this.$refs.companyInfo.$refs['companyBasicInfoThreeRef']){
+                  this.$refs.companyInfo.$refs['companyBasicInfoThreeRef'].validate((valid) => {
+        // this.$refs.companyInfo.$refs['companyBasicInfoThreeRef'].validate((valid) => {
+          if (valid) {
+            resolve()
+          } else {
+            // this.$message.warning("请填写必填项");
+          }
+        })}else{
+          resolve()
+        }
+      })
+
+      var p4 = new Promise((resolve, reject) => {
+        if(this.$refs.companyInfo.$refs['companyBasicInfoFourRef']){
+                  this.$refs.companyInfo.$refs['companyBasicInfoFourRef'].validate((valid) => {
+          if (valid) {
+            resolve()
+          } else {
+            // this.$message.warning("请填写必填项");
+          }
+        })
+        }else{
+          resolve()
+        }
+      })
+
+      Promise.all([p1,p2,p3,p4]).then(() => {
+        console.log("444444444")
+        _this.confimEditDialog()
+      })
+```
